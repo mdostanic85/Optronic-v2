@@ -67,8 +67,32 @@ export const supportDetailsEn = {
   },
   importantHints: {
     heading: 'Important Hints for Support Requests',
-    p1: 'Please contact us if you have problems with or questions about our products.',
-    p2: 'If you place a request, please name device name, part number and serial number.',
+    p1: 'Every OPTRONIC device carries identification markings on its rear or side panels — including type plates, type labels, inspection plates, and serial number labels. Component modules carry inspection plates and serial number labels.',
+    p2: 'When submitting a support request, please provide the device designation, article number, and serial number where possible. This allows us to identify your device uniquely and respond quickly and accurately.',
+    labelTypesHeading: 'Identification Label Types',
+    labels: [
+      {
+        title: 'Type Plate (Typenschild)',
+        description: 'Found on the device housing. Shows the device serial number and the application-specific device designation.',
+        examples: ['Serial number: e.g. 35303', 'Device designation: e.g. E3450'],
+      },
+      {
+        title: 'Type Label (Typenkleber)',
+        description: 'A sticker version of the type plate, containing the same information. May be found on the side or rear of the device.',
+        examples: ['Device designation: e.g. E3450', 'Serial number: e.g. 35303'],
+      },
+      {
+        title: 'Inspection Plate (Kontrollschild)',
+        description: 'Identifies component modules. Contains the OPTRONIC article number and internal inspection code.',
+        examples: ['Article number: e.g. 737.153.02', 'Inspection code: e.g. -1.10/33 or -1/10-80'],
+      },
+      {
+        title: 'Serial Number Label (Seriennummernkleber)',
+        description: 'Found on individual component modules. Contains the component serial number for precise identification.',
+        examples: ['Serial number: e.g. SN2081310/1'],
+      },
+    ],
+    journalNote: 'OPTRONIC maintains a journal for each control system, documenting all issues encountered and any work performed on the device. Please reference these records when contacting support.',
   },
   componentLists: {
     heading: 'Component Lists for Older Control Systems',
@@ -260,8 +284,32 @@ export const supportDetailsDe: typeof supportDetailsEn = {
   },
   importantHints: {
     heading: 'Wichtige Hinweise zu Supportanfragen',
-    p1: 'Kontaktieren Sie uns bei Problemen und Fragen zu unseren Produkten.',
-    p2: 'Bitte nennen Sie bei Anfragen falls möglich Gerätebezeichnung, Artikelnummer und Seriennummer.',
+    p1: 'Jedes OPTRONIC-Gerät trägt auf der Rück- oder Seitenwand Identifikationsmerkmale — darunter Typenschilder, Typenkleber, Kontrollschilder und Seriennummernkleber. Baugruppen tragen Kontrollschilder und Seriennummernkleber.',
+    p2: 'Bitte nennen Sie bei Supportanfragen wenn möglich Gerätebezeichnung, Artikelnummer und Seriennummer. Damit können wir Ihr Gerät eindeutig identifizieren und Ihre Anfrage schnell und präzise bearbeiten.',
+    labelTypesHeading: 'Arten von Identifikationsmerkmalen',
+    labels: [
+      {
+        title: 'Typenschild',
+        description: 'Am Gerätegehäuse angebracht. Enthält die Seriennummer des Geräts sowie die anwendungsspezifische Gerätebezeichnung.',
+        examples: ['Seriennummer: z. B. 35303', 'Gerätebezeichnung: z. B. E3450'],
+      },
+      {
+        title: 'Typenkleber',
+        description: 'Eine Kleberversion des Typenschilds mit denselben Angaben. Befindet sich an der Seite oder Rückseite des Geräts.',
+        examples: ['Gerätebezeichnung: z. B. E3450', 'Seriennummer: z. B. 35303'],
+      },
+      {
+        title: 'Kontrollschild',
+        description: 'Kennzeichnet einzelne Baugruppen. Enthält die OPTRONIC-Artikelnummer sowie den internen Prüfcode.',
+        examples: ['Artikelnummer: z. B. 737.153.02', 'Prüfcode: z. B. -1.10/33 oder -1/10-80'],
+      },
+      {
+        title: 'Seriennummernkleber',
+        description: 'Auf einzelnen Baugruppen angebracht. Enthält die Seriennummer der Baugruppe zur eindeutigen Identifikation.',
+        examples: ['Seriennummer: z. B. SN2081310/1'],
+      },
+    ],
+    journalNote: 'OPTRONIC führt zu jeder Steuerung ein Journal, in dem aufgetretene Probleme und am Gerät vorgenommene Arbeiten dokumentiert werden. Bitte beziehen Sie sich bei Supportanfragen auf diese Aufzeichnungen.',
   },
   componentLists: {
     heading: 'Baugruppenlisten für ältere Steuerungen',
