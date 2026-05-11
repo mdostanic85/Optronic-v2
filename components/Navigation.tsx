@@ -14,7 +14,7 @@ export function Navigation() {
   const [activeProductSection, setActiveProductSection] = useState<string>('sensors')
   const [openMobileProductSection, setOpenMobileProductSection] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
-  const { locale, setLocale, t } = useLanguage()
+  const { locale, t } = useLanguage()
   const pathname = usePathname()
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -191,24 +191,22 @@ export function Navigation() {
             <div className="ml-2 h-5 w-px bg-slate-200" />
 
             <div className="ml-2 inline-flex items-center rounded-full border border-slate-200 bg-white p-0.5">
-              <button
-                onClick={() => setLocale('en')}
+              <a
+                href={`/en${pathname.replace(/^\/(en|de)/, '')}`}
                 className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                   locale === 'en' ? 'bg-op-primary text-white' : 'text-op-body-strong hover:bg-slate-50'
                 }`}
-                aria-pressed={locale === 'en'}
               >
                 EN
-              </button>
-              <button
-                onClick={() => setLocale('de')}
+              </a>
+              <a
+                href={`/de${pathname.replace(/^\/(en|de)/, '')}`}
                 className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                   locale === 'de' ? 'bg-op-primary text-white' : 'text-op-body-strong hover:bg-slate-50'
                 }`}
-                aria-pressed={locale === 'de'}
               >
                 DE
-              </button>
+              </a>
             </div>
           </div>
 
@@ -288,24 +286,22 @@ export function Navigation() {
             ))}
             <div className="mt-3 border-t border-slate-100 pt-3">
               <div className="inline-flex w-full items-center rounded-lg border border-slate-200 bg-white p-0.5">
-                <button
-                  onClick={() => setLocale('en')}
-                  className={`w-1/2 rounded-md px-3 py-2 text-sm font-semibold transition-colors ${
+                <a
+                  href={`/en${pathname.replace(/^\/(en|de)/, '')}`}
+                  className={`w-1/2 rounded-md px-3 py-2 text-sm font-semibold transition-colors text-center ${
                     locale === 'en' ? 'bg-op-primary text-white' : 'text-op-body-strong hover:bg-slate-50'
                   }`}
-                  aria-pressed={locale === 'en'}
                 >
                   EN
-                </button>
-                <button
-                  onClick={() => setLocale('de')}
-                  className={`w-1/2 rounded-md px-3 py-2 text-sm font-semibold transition-colors ${
+                </a>
+                <a
+                  href={`/de${pathname.replace(/^\/(en|de)/, '')}`}
+                  className={`w-1/2 rounded-md px-3 py-2 text-sm font-semibold transition-colors text-center ${
                     locale === 'de' ? 'bg-op-primary text-white' : 'text-op-body-strong hover:bg-slate-50'
                   }`}
-                  aria-pressed={locale === 'de'}
                 >
                   DE
-                </button>
+                </a>
               </div>
             </div>
           </div>
