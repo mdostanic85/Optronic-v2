@@ -1,0 +1,10 @@
+node_modules/
+.next/
+dist/
+.DS_Store
+.vercel/
+.cursor/
+*.tsbuildinfo
+*.log
+coverage/
+.env*.local
