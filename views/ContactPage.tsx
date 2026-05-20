@@ -1,4 +1,4 @@
-'use client'
+
 
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
@@ -11,14 +11,10 @@ import { Card, CardContent } from '../components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { toast } from 'sonner';
 import { PageHeader, PageCTA, Section, Container, ButtonLink } from '../components/design-system';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 export function ContactPage() {
   const { t } = useLanguage();
-  useDocumentHead(
-    'Contact',
-    'Contact OPTRONIC AG in Goldach, Switzerland. Get in touch for product inquiries, technical support, quotes, and custom solutions.',
-  );
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', company: '', subject: '', message: '',
   });
@@ -61,6 +57,7 @@ export function ContactPage() {
 
   return (
     <div>
+      <SEO title="Contact" description="Contact OPTRONIC AG in Goldach, Switzerland. Get in touch for product inquiries, technical support, quotes, and custom solutions." />
       <PageHeader
         title={t.contact.title}
         description={t.contact.description}

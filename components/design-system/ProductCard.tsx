@@ -1,6 +1,7 @@
-'use client'
+import { Link } from 'react-router-dom'
 
-import Link from 'next/link';
+
+
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
@@ -16,9 +17,9 @@ type ProductCardProps = {
 };
 
 export function ProductCard({ to, title, description, imageSrc, imageAlt, className }: ProductCardProps) {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   return (
-    <Link href={to} className={cn('group flex h-full flex-col', className)}>
+    <Link to={lp(to)} className={cn('group flex h-full flex-col', className)}>
       <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/60 bg-white transition-all duration-300 hover:border-op-primary/20 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.1)] hover:-translate-y-1">
         <div className="aspect-[4/3] overflow-hidden bg-slate-50">
           <ImageWithFallback

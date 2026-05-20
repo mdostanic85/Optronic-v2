@@ -1,9 +1,9 @@
-'use client'
+
 
 import { Container, PageHeader, Section } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
 import { privacyDe, privacyEn } from '../locales/privacyLocales';
+import { SEO } from '../src/components/SEO';
 
 export function PrivacyPage() {
   const { locale } = useLanguage();
@@ -11,10 +11,9 @@ export function PrivacyPage() {
 
   const { title, description } = content;
 
-  useDocumentHead(title, description);
-
   return (
     <div>
+      <SEO title="Privacy Policy" description="OPTRONIC AG privacy policy and data protection information." />
       <PageHeader title={title} />
 
       <Section variant="surface" spacing="default">

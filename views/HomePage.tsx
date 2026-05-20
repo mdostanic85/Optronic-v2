@@ -1,8 +1,8 @@
-'use client'
+
 
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   CheckCircle2,
@@ -25,9 +25,10 @@ import {
   CalloutCard,
   Reveal,
   RevealStagger,
+  SwissMadeBadge,
 } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 const lvmcControlImage = '/assets/lvmc-main.webp';
 const lvmcHeroSlideImage = '/assets/lvmc-hero.png';
@@ -40,11 +41,7 @@ const oagLinuxImage = '/assets/oag-linux.webp';
 const cncD371Image = '/assets/cnc-d371.webp';
 
 export function HomePage() {
-  const { t } = useLanguage();
-  useDocumentHead(
-    'Industrial Sensors & CNC Control Systems',
-    'OPTRONIC AG – Swiss-engineered precision sensors (LVMC, light curtains, encoders) and CNC control systems for industrial automation and manufacturing.',
-  );
+  const { t, lp } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroImages = [lvmcHeroSlideImage, e3000Image, lvmFramesHeroImage, og23og28Image, irvIrtHeroSlideImage];
@@ -63,21 +60,21 @@ export function HomePage() {
     {
       id: 'lvmc',
       name: 'LVMC',
-      description: `${t.sensors.items[0].title} - ${t.sensors.items[0].description}`,
+      description: t.sensors.items[0].description || t.sensors.items[0].title,
       image: lvmcControlImage,
       link: '/products/lvmc',
     },
     {
       id: 'lvm',
       name: 'LV...M',
-      description: `${t.sensors.items[1].title} - ${t.sensors.items[1].description}`,
+      description: t.sensors.items[1].description || t.sensors.items[1].title,
       image: lvmFramesImage,
       link: '/products/lvm',
     },
     {
       id: 'og',
       name: 'OG23D/OG28D',
-      description: `${t.sensors.items[3].title} - ${t.sensors.items[3].description}`,
+      description: t.sensors.items[3].description || t.sensors.items[3].title,
       image: og23og28Image,
       link: '/products/og',
     },
@@ -122,10 +119,12 @@ export function HomePage() {
 
   return (
     <div>
+      <SEO title="Industrial Sensors & CNC Control Systems" description="OPTRONIC AG – Swiss-engineered precision sensors (LVMC, light curtains, encoders) and CNC control systems for industrial automation and manufacturing." />
       <section className="relative overflow-hidden bg-op-gradient-hero">
         <div className="absolute inset-0 bg-grid-pattern" />
         <div className="absolute -top-1/2 -right-1/4 h-[800px] w-[800px] rounded-full bg-[#DC3545]/[0.07] blur-[120px]" />
         <div className="absolute -bottom-1/2 -left-1/4 h-[600px] w-[600px] rounded-full bg-[#DC3545]/[0.04] blur-[100px]" />
+        <SwissMadeBadge />
 
         <div className="relative">
           {heroSlides.map((slide: { id: string; title: string; description: string; ctaLink: string; image: string }, i: number) => (
@@ -248,7 +247,7 @@ export function HomePage() {
 
       <Section variant="muted" spacing="default">
         <Container>
-          <Link href="/products/lvmc" className="group block">
+          <Link to={lp('/products/lvmc')} className="group block">
             <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2">
               <Reveal variant="slide-left" duration={0.7}>
               <div>
@@ -401,10 +400,10 @@ export function HomePage() {
                 <>
                   <p className="mb-3 text-sm text-op-body">{t.home.additionalResources}:</p>
                   <div className="space-y-2">
-                    <Link href="/support/downloads" className="block text-sm text-op-primary hover:underline">
+                    <Link to="/support/downloads" className="block text-sm text-op-primary hover:underline">
                       {t.home.technicalDocumentation}
                     </Link>
-                    <Link href="/contact" className="block text-sm text-op-primary hover:underline">
+                    <Link to="/contact" className="block text-sm text-op-primary hover:underline">
                       {t.home.requestQuote}
                     </Link>
                   </div>

@@ -1,19 +1,15 @@
-'use client'
 
-import Link from 'next/link';
+
+import { Link } from 'react-router-dom';
 import { Settings, Wrench, GraduationCap, HeadphonesIcon, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '../components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { PageHeader, PageCTA, Section, Container, ButtonLink } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 export function ServicesPage() {
   const { t } = useLanguage();
-  useDocumentHead(
-    'Services',
-    'OPTRONIC engineering services: CNC system development, repair and retrofit, sensor integration, and technical support.',
-  );
   const services = [
     { icon: Settings, title: 'CNC System Development', description: 'Custom CNC control solutions for specific industrial applications.', features: ['Application-specific CNC programming', 'Multi-axis control system design', 'SERCOS drive integration', 'OAGLinux system configuration', 'Commissioning and optimization'] },
     { icon: Wrench, title: 'Repair & Retrofit', description: 'Professional repair services and system upgrades for all OPTRONIC products.', features: ['Repair of sensors and control systems', 'Retrofit of older D1xx/E1xx controllers', 'CRT to flat-screen monitor upgrades (FSU200)', 'Flying saw controller upgrades (D571)', 'Spare parts supply for legacy systems'] },
@@ -31,6 +27,7 @@ export function ServicesPage() {
 
   return (
     <div>
+      <SEO title="Services" description="OPTRONIC engineering services: CNC system development, repair and retrofit, sensor integration, and technical support." />
       <PageHeader
         title="Our Services"
         description="Comprehensive support services to ensure your success from initial consultation through long-term operation."

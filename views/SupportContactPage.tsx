@@ -1,18 +1,14 @@
-'use client'
+
 
 import { Mail, Phone, Clock, Headphones } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { PageHeader, Section, Container } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 export function SupportContactPage() {
   const { t } = useLanguage();
-  useDocumentHead(
-    'Contact Support',
-    'Submit a support request to OPTRONIC. Get help with technical issues, spare parts, repairs, and configuration.',
-  );
   const supportChannels = [
     { icon: Mail, title: 'Email Support', description: 'Get help via email', details: 'support@optronic.ch', href: 'mailto:support@optronic.ch', info: 'Response within 24 hours' },
     { icon: Phone, title: 'Phone Support', description: 'Talk to our experts', details: '+41 (0)71 844 02 00', href: 'tel:+41718440200', info: 'Mon-Fri, 8:00-17:00 CET' },
@@ -21,6 +17,7 @@ export function SupportContactPage() {
 
   return (
     <div>
+      <SEO title="Contact Support" description="Submit a support request to OPTRONIC. Get help with technical issues, spare parts, repairs, and configuration." />
       <PageHeader
         title="Contact Support"
         description="Our technical support team is here to help you get the most out of your OPTRONIC products"

@@ -1,18 +1,14 @@
-'use client'
 
-import Link from 'next/link';
+
+import { Link } from 'react-router-dom';
 import { ArrowRight, Cpu, Radio } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
 import { PageHeader, PageCTA, Section, Container, ButtonLink } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 export function ProductsPage() {
-  const { t } = useLanguage();
-  useDocumentHead(
-    'Products',
-    'Explore OPTRONIC industrial sensors and CNC control systems. Digital light screens, light curtains, encoders, multi-axis CNC controllers, and real-time operating systems.',
-  );
+  const { t, lp } = useLanguage();
 
   const categories = [
     {
@@ -33,6 +29,7 @@ export function ProductsPage() {
 
   return (
     <div>
+      <SEO title="Products" description="Explore OPTRONIC industrial sensors and CNC control systems. Digital light screens, light curtains, encoders, multi-axis CNC controllers, and real-time operating systems." />
       <PageHeader
         title={t.footer.products}
         description={t.home.ourSolutionsDesc}
@@ -42,7 +39,7 @@ export function ProductsPage() {
         <Container>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {categories.map((cat) => (
-              <Link key={cat.title} href={cat.link} className="group">
+              <Link key={cat.title} to={lp(cat.link)} className="group">
                 <Card className="h-full overflow-hidden border-2 transition-all group-hover:border-op-primary group-hover:shadow-xl">
                   <CardContent className="p-8">
                     <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-op-primary-muted transition-colors group-hover:bg-op-primary/20">

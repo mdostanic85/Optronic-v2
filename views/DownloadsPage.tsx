@@ -1,11 +1,11 @@
-'use client'
+
 
 import { Download, FileText, Search, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { PageHeader, Section, Container, ButtonLink } from '../components/design-system';
-import { useDocumentHead } from '../hooks/useDocumentHead';
 import { useLanguage } from '../contexts/LanguageContext';
+import { SEO } from '../src/components/SEO';
 
 interface DownloadFile {
   name: string;
@@ -16,7 +16,6 @@ interface DownloadFile {
 export function DownloadsPage() {
   const { t, locale } = useLanguage();
   const d = t.downloads;
-  useDocumentHead(d.metaTitle, d.metaDescription);
   const [searchQuery, setSearchQuery] = useState('');
   const byLocale = (defaultLink: string, deLink?: string) => (locale === 'de' && deLink ? deLink : defaultLink);
   const downloadBaseUrl = 'https://www.optronic.ch/download';
@@ -322,6 +321,7 @@ export function DownloadsPage() {
 
   return (
     <div>
+      <SEO title="Downloads" description="Download product manuals, datasheets, software, and technical documentation for OPTRONIC sensors and CNC control systems." />
       <PageHeader
         title={d.pageTitle}
         description={d.pageDescription}

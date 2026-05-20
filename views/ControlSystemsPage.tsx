@@ -1,12 +1,12 @@
-'use client'
 
-import Link from 'next/link';
+
+import { Link } from 'react-router-dom';
 import { ArrowRight, Download } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { PageHeader, PageCTA, Section, Container, ButtonLink } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 const SYSTEM_IDS = ['d500-e3000', 'oaglinux', 'd571'];
 const SYSTEM_IMAGES = ['/assets/e3000.webp', '/assets/oag-linux.webp', '/assets/e3000.webp'];
@@ -17,11 +17,7 @@ const SYSTEM_DATASHEETS = [
 ];
 
 export function ControlSystemsPage() {
-  const { t } = useLanguage();
-  useDocumentHead(
-    'Control Systems',
-    'OPTRONIC CNC control systems: D500/E3000 multi-axis controller, OAGLinux real-time operating system, D571 flying saw controller for industrial manufacturing.',
-  );
+  const { t, lp } = useLanguage();
 
   const controlSystems = t.controlSystems.items.map((item: { name: string; title: string; description: string; features: string[]; applications: string[] }, i: number) => ({
     id: SYSTEM_IDS[i],
@@ -36,6 +32,7 @@ export function ControlSystemsPage() {
 
   return (
     <div>
+      <SEO title="Control Systems" description="OPTRONIC CNC control systems: D500/E3000 multi-axis controller, OAGLinux real-time operating system, D571 flying saw controller for industrial manufacturing." />
       <PageHeader
         title={t.controlSystems.title}
         description={t.controlSystems.description}
@@ -80,7 +77,7 @@ export function ControlSystemsPage() {
 
                   <div className="flex gap-3">
                     <Button className="flex-1" asChild>
-                      <Link href={`/products/${system.id}`}>{t.controlSystems.viewDetails}</Link>
+                      <Link to={lp(`/products/${system.id}`)}>{t.controlSystems.viewDetails}</Link>
                     </Button>
                     <Button variant="outline" asChild>
                       <a href={system.datasheet} target="_blank" rel="noopener noreferrer">

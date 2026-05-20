@@ -1,21 +1,24 @@
-'use client'
 
-import Link from 'next/link';
+
+import { Link } from 'react-router-dom';
 import { ArrowRight, Download } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { PageHeader, PageCTA, Section, Container, ButtonLink } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 export function SensorsPage() {
-  const { t } = useLanguage();
-  useDocumentHead(
-    'Sensors',
-    'OPTRONIC precision sensors: LVMC digital light screens, LV..M light curtains, G15/G35 measuring light barriers, OG incremental encoders, IRV/IRT inductive sensors, IGV encoder expanders.',
-  );
+  const { t, lp } = useLanguage();
   const sensorIds = ['lvmc', 'lvm', 'g15-g35', 'og', 'irv-irt', 'igv'];
-  const sensorImages = ['/assets/lvmc-main.webp', '/assets/lvm-sensor.webp', '/assets/g15-g35.webp', '/assets/og23-og28.webp', '/assets/irv20-mit-spule-32bit.webp', '/assets/igv.webp'];
+  const sensorImages = [
+    '/assets/lvmc-main.webp',
+    '/assets/lvm-sensor.webp',
+    'https://www.optronic.ch/wp-content/uploads/2020/09/G15-_-G35-300x188.jpg',
+    '/assets/og23-og28.webp',
+    '/assets/irv20-mit-spule-32bit.webp',
+    '/assets/igv.webp',
+  ];
   const sensorDatasheets = [
     '/downloads/doc/sensors/Light_Curtain_LVMC_Flyer.pdf',
     '/downloads/doc/sensors/Light_Curtain_LV..M_Flyer.pdf',
@@ -28,6 +31,7 @@ export function SensorsPage() {
 
   return (
     <div>
+      <SEO title="Sensors" description="OPTRONIC precision sensors: LVMC digital light screens, LV..M light curtains, G15/G35 measuring light barriers, OG incremental encoders, IRV/IRT inductive sensors, IGV encoder expanders." />
       <PageHeader
         title={t.sensors.title}
         description={t.sensors.description}
@@ -35,29 +39,38 @@ export function SensorsPage() {
 
       <Section variant="surface" spacing="default">
         <Container>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
             {sensors.map((sensor) => (
-              <Card key={sensor.id} className="group overflow-hidden border-2 transition-all hover:border-op-primary hover:shadow-xl">
-                <div className="flex aspect-square items-center justify-center overflow-hidden bg-op-surface-muted">
-                  <img src={sensor.image} alt={sensor.name} className="h-full w-full object-cover" />
+              <Card key={sensor.id} className="group flex h-full flex-col gap-0 overflow-hidden border-2 transition-all hover:border-op-primary hover:shadow-xl">
+                <div className="flex aspect-[4/3] shrink-0 items-center justify-center bg-white p-6">
+                  <img
+                    src={sensor.image}
+                    alt={sensor.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
-                <CardContent className="p-6">
-                  <div className="mb-2 text-sm text-op-primary">{sensor.name}</div>
-                  <h3 className="mb-3 text-xl font-medium text-op-ink">{sensor.title}</h3>
-                  <p className="mb-4 text-op-body">{sensor.description}</p>
-
-                  <div className="mb-6 space-y-2">
-                    {sensor.features.slice(0, 3).map((f) => (
-                      <div key={f} className="flex items-start gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-op-primary" />
-                        <span className="text-sm text-op-body">{f}</span>
+                <CardContent className="flex flex-1 flex-col p-6">
+                  <div className="mb-2 shrink-0 text-sm text-op-primary">{sensor.name}</div>
+                  <div className="flex flex-1 flex-col">
+                    <p className="text-op-body">{sensor.title}</p>
+                    {sensor.description ? (
+                      <p className="mt-2 text-op-body">{sensor.description}</p>
+                    ) : null}
+                    {sensor.features.length > 0 ? (
+                      <div className="mt-4 space-y-2">
+                        {sensor.features.slice(0, 3).map((f) => (
+                          <div key={f} className="flex items-start gap-2">
+                            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-op-primary" />
+                            <span className="text-sm text-op-body">{f}</span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    ) : null}
                   </div>
 
-                  <div className="flex gap-3">
+                  <div className="mt-6 flex shrink-0 gap-3">
                     <Button variant="outline" className="flex-1" asChild>
-                      <Link href={`/products/${sensor.id}`}>
+                      <Link to={lp(`/products/${sensor.id}`)}>
                         {t.sensors.learnMore}
                       </Link>
                     </Button>

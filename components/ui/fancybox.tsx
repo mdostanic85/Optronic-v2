@@ -1,4 +1,4 @@
-'use client'
+
 
 import { type ReactNode, useEffect, useRef } from 'react';
 import { Fancybox as NativeFancybox } from '@fancyapps/ui/dist/fancybox/';

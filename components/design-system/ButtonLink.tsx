@@ -1,7 +1,9 @@
-'use client'
+import { Link } from 'react-router-dom'
+
 
 import React from 'react';
-import Link from 'next/link';
+
+import { useLanguage } from '../../contexts/LanguageContext';
 import { cn } from '../ui/utils';
 
 type ButtonVariant = 'primary' | 'ghostOnDark' | 'outlineLight' | 'outlineNeutral';
@@ -31,8 +33,9 @@ type ButtonLinkProps = {
  * Primary CTA links — matches Figma navy / ghost / outline buttons.
  */
 export function ButtonLink({ to, children, variant = 'primary', className, iconRight }: ButtonLinkProps) {
+  const { lp } = useLanguage();
   return (
-    <Link href={to} className={cn(variantBase, variants[variant], 'px-4', className)}>
+    <Link to={lp(to)} className={cn(variantBase, variants[variant], 'px-4', className)}>
       {children}
       {iconRight}
     </Link>
@@ -48,8 +51,9 @@ type TextLinkProps = {
 
 /** Inline "Learn more" style (primary red text). */
 export function TextLink({ to, children, className, iconRight }: TextLinkProps) {
+  const { lp } = useLanguage();
   return (
-    <Link href={to} className={cn('inline-flex items-center gap-1 text-base tracking-[-0.31px] text-op-primary', className)}>
+    <Link to={lp(to)} className={cn('inline-flex items-center gap-1 text-base tracking-[-0.31px] text-op-primary', className)}>
       {children}
       {iconRight}
     </Link>

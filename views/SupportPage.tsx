@@ -1,14 +1,14 @@
-'use client'
 
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
+
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, Wrench, Package, Clock, HelpCircle, Download, ExternalLink } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { PageHeader, PageCTA, Section, Container, ButtonLink } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 interface SupportCategory {
   id: string;
@@ -102,7 +102,7 @@ function CNCObsoleteContent() {
         <h4 className="mb-3 text-lg font-medium text-op-ink">{sd.cncObsolete.replacingTitle}</h4>
         <p className="text-op-body">
           {sd.cncObsolete.replacingPrefix}
-          <Link href="/support/fsu200" className="text-op-primary hover:underline">{sd.cncObsolete.replacingLinkText}</Link>
+          <Link to="/support/fsu200" className="text-op-primary hover:underline">{sd.cncObsolete.replacingLinkText}</Link>
           {sd.cncObsolete.replacingSuffix}
         </p>
       </div>
@@ -448,10 +448,6 @@ export function SupportPage() {
   const id = Array.isArray(params?.id) ? params.id[0] : params?.id;
   const { t, locale } = useLanguage();
   const sd = t.supportDetails;
-  useDocumentHead(
-    'Support',
-    'OPTRONIC support, repair, and retrofit services. Legacy system support, spare parts, component lists, and CRT monitor replacements for industrial control systems.',
-  );
 
   const supportCategories: SupportCategory[] = [
     {
@@ -526,7 +522,7 @@ export function SupportPage() {
       <div>
         <PageHeader title={activeCategory.title} description={hideActiveCategoryDescription ? '' : activeCategory.description}>
           <div className="mt-6">
-            <Link href="/support" className="inline-flex items-center gap-2 text-op-on-dark-muted transition-colors hover:text-op-on-dark">
+            <Link to="/support" className="inline-flex items-center gap-2 text-op-on-dark-muted transition-colors hover:text-op-on-dark">
               <ArrowLeft className="h-4 w-4" /> {sd.backToSupport}
             </Link>
           </div>
@@ -546,7 +542,7 @@ export function SupportPage() {
                       {supportCategories.map((category) => (
                         <Link
                           key={category.id}
-                          href={`/support/${category.id}`}
+                          to={`/support/${category.id}`}
                           className={`block rounded-lg p-3 text-sm transition-colors ${
                             category.id === id
                               ? 'bg-op-primary-muted text-op-primary font-medium'
@@ -572,7 +568,7 @@ export function SupportPage() {
                         </div>
                       </div>
                       <Button className="mt-4 w-full" asChild>
-                        <Link href="/contact">{t.support.getInTouch}</Link>
+                        <Link to="/contact">{t.support.getInTouch}</Link>
                       </Button>
                     </CardContent>
                   </Card>
@@ -587,6 +583,7 @@ export function SupportPage() {
 
   return (
     <div>
+      <SEO title="Support" description="OPTRONIC support, repair, and retrofit services. Legacy system support, spare parts, component lists, and CRT monitor replacements for industrial control systems." />
       <PageHeader
         title={t.support.title}
         description={t.support.description}
@@ -625,7 +622,7 @@ export function SupportPage() {
                   {supportGalleryImages.map((item) => (
                     <Link
                       key={item.src}
-                      href={item.href}
+                      to={item.href}
                       className="overflow-hidden rounded-xl border border-op-border bg-op-surface-muted transition-all hover:border-op-primary/40 hover:shadow-md"
                     >
                       <ImageWithFallback src={item.src} alt="support_gallery" className="h-28 w-full object-cover md:h-32" />
@@ -645,7 +642,7 @@ export function SupportPage() {
                 {supportCategories.map((category) => (
                   <Link
                     key={category.id}
-                    href={`/support/${category.id}`}
+                    to={`/support/${category.id}`}
                     className="group rounded-xl border-2 border-op-border bg-op-surface p-6 transition-all hover:border-op-primary hover:shadow-lg"
                   >
                     <h3 className="mb-2 text-lg font-medium text-op-ink transition-colors group-hover:text-op-primary">
@@ -691,7 +688,7 @@ export function SupportPage() {
                       </div>
                     </div>
                     <Button className="mt-6 w-full" asChild>
-                      <Link href="/contact">{t.support.getInTouch}</Link>
+                      <Link to="/contact">{t.support.getInTouch}</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -699,10 +696,10 @@ export function SupportPage() {
                 <div className="rounded-xl bg-op-surface-muted p-6">
                   <h3 className="mb-4 text-lg font-medium text-op-ink">{t.support.additionalResources}</h3>
                   <div className="space-y-3">
-                    <Link href="/support/downloads" className="block rounded-lg p-3 text-sm text-op-body transition-colors hover:bg-op-surface hover:text-op-primary">
+                    <Link to="/support/downloads" className="block rounded-lg p-3 text-sm text-op-body transition-colors hover:bg-op-surface hover:text-op-primary">
                       {t.support.resourceDownloads}
                     </Link>
-                    <Link href="/support/documentation" className="block rounded-lg p-3 text-sm text-op-body transition-colors hover:bg-op-surface hover:text-op-primary">
+                    <Link to="/support/documentation" className="block rounded-lg p-3 text-sm text-op-body transition-colors hover:bg-op-surface hover:text-op-primary">
                       {t.support.resourceDocs}
                     </Link>
                   </div>

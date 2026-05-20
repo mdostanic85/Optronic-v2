@@ -1,6 +1,4 @@
-'use client'
-
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 
@@ -29,9 +27,9 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/60">{t.footer.products}</h3>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href={lp('/products/lvmc')} className="transition-colors hover:text-white">{t.footer.lvmcLink}</Link></li>
-              <li><Link href={lp('/products/sensors')} className="transition-colors hover:text-white">{t.footer.sensorsLink}</Link></li>
-              <li><Link href={lp('/products/control-systems')} className="transition-colors hover:text-white">{t.footer.controlSystemsLink}</Link></li>
+              <li><Link to={lp('/products/lvmc')} className="transition-colors hover:text-white">{t.footer.lvmcLink}</Link></li>
+              <li><Link to={lp('/products/sensors')} className="transition-colors hover:text-white">{t.footer.sensorsLink}</Link></li>
+              <li><Link to={lp('/products/control-systems')} className="transition-colors hover:text-white">{t.footer.controlSystemsLink}</Link></li>
             </ul>
           </div>
 
@@ -39,10 +37,10 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/60">{t.footer.support}</h3>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href={lp('/support/downloads')} className="transition-colors hover:text-white">{t.footer.downloadsLink}</Link></li>
-              <li><Link href={lp('/support/documentation')} className="transition-colors hover:text-white">{t.footer.documentationLink}</Link></li>
-              <li><Link href={lp('/support/faqs')} className="transition-colors hover:text-white">{t.footer.faqsLink}</Link></li>
-              <li><Link href={lp('/support/contact')} className="transition-colors hover:text-white">{t.footer.contactSupportLink}</Link></li>
+              <li><Link to={lp('/support/downloads')} className="transition-colors hover:text-white">{t.footer.downloadsLink}</Link></li>
+              <li><Link to={lp('/support/documentation')} className="transition-colors hover:text-white">{t.footer.documentationLink}</Link></li>
+              <li><Link to={lp('/support/faqs')} className="transition-colors hover:text-white">{t.footer.faqsLink}</Link></li>
+              <li><Link to={lp('/support/contact')} className="transition-colors hover:text-white">{t.footer.contactSupportLink}</Link></li>
             </ul>
           </div>
 
@@ -69,7 +67,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 py-6 text-xs text-slate-400 md:flex-row">
           <p>© {currentYear} OPTRONIC AG. {t.footer.rights}</p>
           <div className="flex gap-6">
-            <Link href={lp('/privacy')} className="transition-colors hover:text-slate-200">{t.footer.privacy}</Link>
+            <Link to={lp('/privacy')} className="transition-colors hover:text-slate-200">{t.footer.privacy}</Link>
           </div>
         </div>
       </div>

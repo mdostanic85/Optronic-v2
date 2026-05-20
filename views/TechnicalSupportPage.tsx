@@ -1,20 +1,16 @@
-'use client'
 
-import Link from 'next/link';
+
+import { Link } from 'react-router-dom';
 import { Wrench, Clock, Users, Award, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { PageHeader, PageCTA, Section, Container, ButtonLink } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 export function TechnicalSupportPage() {
   const { t } = useLanguage();
-  useDocumentHead(
-    'Technical Support',
-    'OPTRONIC technical support services: troubleshooting, maintenance, on-site support, and warranty service for industrial sensors and CNC systems.',
-  );
   const services = [
     { icon: Wrench, title: 'Troubleshooting & Diagnostics', description: 'Expert assistance in identifying and resolving technical issues with your equipment.' },
     { icon: Clock, title: 'Preventive Maintenance', description: 'Scheduled maintenance programs to ensure optimal performance and longevity.' },
@@ -24,6 +20,7 @@ export function TechnicalSupportPage() {
 
   return (
     <div>
+      <SEO title="Technical Support" description="OPTRONIC technical support services: troubleshooting, maintenance, on-site support, and warranty service for industrial sensors and CNC systems." />
       <PageHeader
         title="Technical Support"
         description="Expert technical assistance from our team of experienced engineers"
@@ -75,7 +72,7 @@ export function TechnicalSupportPage() {
               <p className="mb-6 text-op-on-dark-muted">Our support team is ready to help you resolve any technical issues.</p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Button variant="secondary" size="lg" asChild>
-                  <Link href="/support/contact">{t.common.submitSupportRequest}</Link>
+                  <Link to="/support/contact">{t.common.submitSupportRequest}</Link>
                 </Button>
                 <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white hover:text-op-secondary" asChild>
                   <a href="tel:+41718440200">{t.common.callUsButton}</a>

@@ -1,8 +1,5 @@
-'use client'
-
 import { useState, useRef, useEffect, useCallback } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
 
@@ -15,7 +12,7 @@ export function Navigation() {
   const [openMobileProductSection, setOpenMobileProductSection] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
   const { locale, t } = useLanguage()
-  const pathname = usePathname()
+  const { pathname } = useLocation()
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const lp = (path: string) => `/${locale}${path}`
@@ -103,7 +100,7 @@ export function Navigation() {
     <nav className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-[0_1px_0_rgba(15,23,42,0.06)]' : ''}`}>
       <div className="mx-auto max-w-op-container px-op-gutter">
         <div className="flex h-16 items-center justify-between">
-          <Link href={lp('/')} className="flex items-center">
+          <Link to={lp('/')} className="flex items-center">
             <img src={logoImage} alt="OPTRONIC" className="h-[1.575rem] w-auto" width="242" height="25" />
           </Link>
 
@@ -140,7 +137,7 @@ export function Navigation() {
                             {productMenuSections.map((section) => (
                               <div key={section.id} className="relative">
                                 <Link
-                                  href={lp(section.path)}
+                                  to={lp(section.path)}
                                   onMouseEnter={() => setActiveProductSection(section.id)}
                                   onFocus={() => setActiveProductSection(section.id)}
                                   className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs font-medium transition-all duration-150 ${
@@ -158,7 +155,7 @@ export function Navigation() {
                                     {section.links.map((sub) => (
                                       <Link
                                         key={sub.path}
-                                        href={lp(sub.path)}
+                                        to={lp(sub.path)}
                                         className={`block px-3.5 py-2.5 rounded-lg text-xs transition-all duration-150 ${
                                           isActive(sub.path) ? 'bg-op-primary-muted text-op-primary font-medium' : 'text-op-body-strong hover:bg-slate-50 hover:text-op-ink'
                                         }`}
@@ -177,7 +174,7 @@ export function Navigation() {
                   </>
                 ) : (
                   <Link
-                    href={lp(item.path!)}
+                    to={lp(item.path!)}
                     className={`px-3.5 py-2 rounded-lg transition-all duration-200 text-xs font-medium ${
                       isActive(item.path!) ? 'text-op-primary bg-op-primary-muted' : 'text-op-body-strong hover:text-op-ink hover:bg-slate-50'
                     }`}
@@ -191,22 +188,22 @@ export function Navigation() {
             <div className="ml-2 h-5 w-px bg-slate-200" />
 
             <div className="ml-2 inline-flex items-center rounded-full border border-slate-200 bg-white p-0.5">
-              <a
-                href={`/en${pathname.replace(/^\/(en|de)/, '')}`}
+              <Link
+                to={`/en${pathname.replace(/^\/(en|de)/, '')}`}
                 className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                   locale === 'en' ? 'bg-op-primary text-white' : 'text-op-body-strong hover:bg-slate-50'
                 }`}
               >
                 EN
-              </a>
-              <a
-                href={`/de${pathname.replace(/^\/(en|de)/, '')}`}
+              </Link>
+              <Link
+                to={`/de${pathname.replace(/^\/(en|de)/, '')}`}
                 className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                   locale === 'de' ? 'bg-op-primary text-white' : 'text-op-body-strong hover:bg-slate-50'
                 }`}
               >
                 DE
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -238,7 +235,7 @@ export function Navigation() {
                           <div key={section.title} className="mt-1">
                             <div className="flex items-center gap-1">
                               <Link
-                                href={lp(section.path)}
+                                to={lp(section.path)}
                                 onClick={() => setIsOpen(false)}
                                 className={`flex-1 px-3 py-2 rounded-lg text-sm font-semibold uppercase tracking-wide transition-colors ${
                                   isActive(section.path) ? 'bg-op-primary-muted text-op-primary' : 'text-op-body-muted hover:bg-slate-50'
@@ -257,7 +254,7 @@ export function Navigation() {
                             {openMobileProductSection === section.id && section.links.map((sub) => (
                               <Link
                                 key={sub.path}
-                                href={lp(sub.path)}
+                                to={lp(sub.path)}
                                 onClick={() => setIsOpen(false)}
                                 className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
                                   isActive(sub.path) ? 'bg-op-primary-muted text-op-primary font-medium' : 'text-op-body hover:bg-slate-50'
@@ -273,7 +270,7 @@ export function Navigation() {
                   </>
                 ) : (
                   <Link
-                    href={lp(item.path!)}
+                    to={lp(item.path!)}
                     onClick={() => setIsOpen(false)}
                     className={`block px-3 py-2.5 rounded-lg transition-colors font-medium ${
                       isActive(item.path!) ? 'bg-op-primary-muted text-op-primary' : 'text-op-body-strong hover:bg-slate-50'
@@ -286,22 +283,22 @@ export function Navigation() {
             ))}
             <div className="mt-3 border-t border-slate-100 pt-3">
               <div className="inline-flex w-full items-center rounded-lg border border-slate-200 bg-white p-0.5">
-                <a
-                  href={`/en${pathname.replace(/^\/(en|de)/, '')}`}
+                <Link
+                  to={`/en${pathname.replace(/^\/(en|de)/, '')}`}
                   className={`w-1/2 rounded-md px-3 py-2 text-sm font-semibold transition-colors text-center ${
                     locale === 'en' ? 'bg-op-primary text-white' : 'text-op-body-strong hover:bg-slate-50'
                   }`}
                 >
                   EN
-                </a>
-                <a
-                  href={`/de${pathname.replace(/^\/(en|de)/, '')}`}
+                </Link>
+                <Link
+                  to={`/de${pathname.replace(/^\/(en|de)/, '')}`}
                   className={`w-1/2 rounded-md px-3 py-2 text-sm font-semibold transition-colors text-center ${
                     locale === 'de' ? 'bg-op-primary text-white' : 'text-op-body-strong hover:bg-slate-50'
                   }`}
                 >
                   DE
-                </a>
+                </Link>
               </div>
             </div>
           </div>

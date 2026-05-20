@@ -77,15 +77,15 @@ const de = {
 
   // ── Sensors page ──
   sensors: {
-    title: 'Sensorik',
-    description: 'Lösungen für spezielle Sensorikprobleme — Präzise optische und fotoelektrische Sensoren für industrielle Mess-, Erkennungs- und Steuerungsanwendungen',
+    title: 'Lösungen für spezielle Sensorikprobleme',
+    description: '',
     items: [
-      { name: 'LVMC', title: 'Digitale Lichtvorhänge / Lichtgitter', description: 'Zum Erfassen, Zählen, Messen Klassifizieren und zur Qualitätskontrolle', features: ['Selbstlernender optischer Sensor zum Erfassen, Zählen, Messen, Klassifizieren und zur Qualitätskontrolle', 'Hochpräzises Zählen und Messen', 'Fortschrittliche Klassifizierungsalgorithmen', 'Einfache Konfiguration und Einrichtung', 'hohe Betriebssicherheit'] },
-      { name: 'LV...M', title: 'Lichtvorhänge / Lichtgitter', description: 'Zum Erfassen und Zählen von Kleinteilen jeglicher Art', features: ['Vielseitige Objekterkennung', 'Lückenloses Tastfeld', 'Schnelle Reaktionszeit', 'Flexible Montagemöglichkeiten', 'Hohe Erkennungsgenauigkeit'] },
-      { name: 'G15 / G35', title: 'Spezial-Lichtschranken', description: 'Spezial-Lichtschranken zum Einsatz in Längenmess-Systemen oder als Lichtvorhänge', features: ['Präzise Längenmessung', 'Hohe Zuverlässigkeit', 'Robuste Konstruktion', 'Einfache Integration', 'Große Reichweite'] },
-      { name: 'OG23D / OG28D', title: 'Inkrementalgeber', description: 'Robuste fotoelektrische Inkrementalgeber für den Einsatz unter erschwerten Bedingungen', features: ['Äußerst robuster Aufbau', 'Hohe Signalqualität', 'Hohe Drehzahl/Frequenz', 'Temperaturbeständig', 'Hochauflösende Codierung'] },
-      { name: 'IRV / IRT', title: 'Selbstjustierende Induktive Ringtaster', description: 'Berührungsloses Erfassen von metallischem Material', features: ['Berührungslose Erkennung', 'Automatische Empfindlichkeitsanpassung', 'hohe Betriebssicherheit', 'Erkennung metallischer Materialien', 'lückenloses Tastfeld'] },
-      { name: 'IGV', title: 'Inkrementalgeber-Verzweigungen', description: 'Zum potentialfreien Anschluss eines Inkrementalgebers an bis zu drei Ziel-Baugruppen', features: ['unterstützt alle üblichen Geber-Signale (A, A/, B, B/, C, C/, D, D/)', '5 V, 12 V oder 15 V Versorgungsspannung für angeschlossene Encoder', 'Für CNC, SPS, Messgeräte usw.', 'Mehrfach-Zielanschluss', '5 V, 12 V oder 15 V Versorgungsspannung für angeschlossene Encoder'] },
+      { name: 'LVMC', title: 'Selbstlernende digitale Lichtvorhänge zum Erfassen, Zählen, Messen und Klassifizieren', description: '', features: [] },
+      { name: 'LV...M', title: 'Lichtvorhänge zum Erfassen und Zählen von Kleinteilen jeglicher Art', description: '', features: [] },
+      { name: 'G15 / G35', title: 'Spezial-Lichtschranken zum Einsatz in Längenmess-Systemen oder als Lichtvorhänge', description: '', features: [] },
+      { name: 'OG23D / OG28D', title: 'Robuste fotoelektrische Inkrementalgeber für den Einsatz unter erschwerten Bedingungen', description: '', features: [] },
+      { name: 'IRV / IRT', title: 'Selbstjustierende Induktive Ringtaster zum berührungslosen Erfassen von metallischem Material', description: '', features: [] },
+      { name: 'IGV', title: 'Mehrfach-Inkrementalgeber-Verzweigungen zum potentialfreien Anschluss eines Gebers an bis zu drei Ziel-Baugruppen (CNC, SPS, Messgeräte, usw.)', description: '', features: [] },
     ],
     learnMore: 'Mehr erfahren',
     ctaTitle: 'Hilfe bei der Auswahl des richtigen Sensors?',
@@ -206,12 +206,12 @@ const de = {
 
   // ── About page ──
   about: {
-    title: 'Über OPTRONIC',
+    title: 'Ihre Zufriedenheit ist unser primäres Ziel',
     description: 'Seit über 60 Jahren führend in optischen und elektronischen Lösungen.',
     ourStory: 'Unsere Geschichte',
     storyParagraphs: [
-      'OPTRONIC wurde 1961 mit einer einfachen Mission gegründet: Innovative und qualitativ hochstehende elektronische Lösungen bereitzustellen, die Unternehmen ermöglichen, mit mehr Präzision und Effizienz erfolgreich zu sein.',
-      'Was als kleines Ingenieurbüro begann, hat sich zu einem weltweit aktiven Unternehmen entwickelt. Heute bedienen wir weltweit über 200 Kunden und bieten innovative Lösungen und professionelle Unterstützung für zahlreiche Branchen, insbesondere die Verpackungs-, Rohrverarbeitungs-, Automobil- und Luftfahrtindustrie.',
+      'OPTRONIC AG wurde 1961 als Unternehmen für Entwicklung und Herstellung sowie Vertrieb von opto-elektronischen Geräten gegründet.',
+      'Heute umfasst das Leistungsangebot von OPTRONIC AG Lösungen für besondere Anforderungen in den Bereichen industrielle Steuerungstechnik und Sensorik sowie kundenspezifische Hardware- und Software-Entwicklung.',
       '',
     ],
     ourValues: 'Unsere Werte',
@@ -222,10 +222,6 @@ const de = {
       { title: 'Partnerschaft', description: 'Aufbau dauerhafter Beziehungen durch Zusammenarbeit und engagierten Support.' },
       { title: 'Integrität', description: 'Handeln mit Transparenz, Ehrlichkeit und ethischen Geschäftspraktiken.' },
     ],
-    ourJourney: 'Unsere Reise',
-    ourJourneyDesc: 'Wichtige Meilensteine in unserem Wachstum und unserer Entwicklung.',
-    leadershipTeam: 'Führungsteam',
-    leadershipTeamDesc: 'Lernen Sie die Experten kennen, die unsere Vision vorantreiben.',
   },
 
   // ── Footer ──
@@ -322,6 +318,16 @@ const de = {
       tableMinObject: 'minimale Objektgrösse',
       tableSensingArea: 'Tastfeldgrösse',
       tableDimensions: 'Außenmaße',
+    },
+
+    g15g35: {
+      overviewBadge: 'Messlichtschranken',
+      overviewHeading: 'Produktübersicht',
+      overviewDescription:
+        'Die Messlichtschranken G15 und G35 sind Spezial-Lichtschranken für Längenmess-Systeme oder als Lichtvorhänge zur Objekterkennung. Mit Ansprechzeiten von 100µs und Genauigkeiten bis ±0,5 mm liefern sie zuverlässige Resultate auch unter erschwerten Bedingungen.',
+      downloadsHeading: 'Technische Dokumentation',
+      ctaTitle: 'Fragen zu G15 / G35?',
+      ctaDesc: 'Kontaktieren Sie unser technisches Team für Beratung und Konfiguration.',
     },
 
     lvm: {

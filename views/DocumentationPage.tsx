@@ -1,18 +1,14 @@
-'use client'
 
-import Link from 'next/link';
+
+import { Link } from 'react-router-dom';
 import { FileText, Download, ArrowRight, Radio, Cpu, Wrench } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
 import { PageHeader, Section, Container, ButtonLink } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 export function DocumentationPage() {
-  const { t } = useLanguage();
-  useDocumentHead(
-    'Technical Documentation',
-    'Find product manuals, datasheets, and technical specifications for all OPTRONIC sensors and control systems.',
-  );
+  const { t, lp } = useLanguage();
   const productDocs = [
     { title: 'LVMC – Digital Light Screens', desc: 'Brochure, getting started guide, user manual, and CMT/RC software', link: '/products/lvmc#downloads', icon: Radio },
     { title: 'LV..M – Light Curtains', desc: 'Product brochure and technical datasheet', link: '/products/lvm#downloads', icon: Radio },
@@ -28,6 +24,7 @@ export function DocumentationPage() {
 
   return (
     <div>
+      <SEO title="Technical Documentation" description="Find product manuals, datasheets, and technical specifications for all OPTRONIC sensors and control systems." />
       <PageHeader
         title="Technical Documentation"
         description="Find product manuals, datasheets, installation guides, and technical specifications for all OPTRONIC products"
@@ -44,7 +41,7 @@ export function DocumentationPage() {
 
           <div className="grid gap-4 md:grid-cols-2">
             {productDocs.map((doc) => (
-              <Link key={doc.title} href={doc.link} className="group">
+              <Link key={doc.title} to={lp(doc.link)} className="group">
                 <Card className="h-full transition-all hover:border-op-primary hover:shadow-lg">
                   <CardContent className="flex items-start gap-4 p-6">
                     <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-op-primary-muted transition-colors group-hover:bg-op-primary/20">

@@ -1,3 +1,7 @@
+@import 'tailwindcss';
+@import '@fancyapps/ui/dist/fancybox/fancybox.css';
+@import './tokens.css';
+
 @font-face {
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
@@ -19,10 +23,6 @@
   font-display: swap;
   src: url('/fonts/plus-jakarta-sans-latin.woff2') format('woff2');
 }
-
-@import 'tailwindcss';
-@import '@fancyapps/ui/dist/fancybox/fancybox.css';
-@import './tokens.css';
 
 @custom-variant dark (&:is(.dark *));
 

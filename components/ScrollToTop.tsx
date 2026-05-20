@@ -1,10 +1,8 @@
-'use client'
-
 import { useEffect, useRef } from 'react'
-import { usePathname } from 'next/navigation'
+import { useLocation } from 'react-router-dom'
 
 export function ScrollToTop() {
-  const pathname = usePathname()
+  const { pathname } = useLocation()
   const previousContentPathRef = useRef<string | null>(null)
 
   const getContentPath = (path: string) => {

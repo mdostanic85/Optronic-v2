@@ -67,32 +67,41 @@ export const supportDetailsEn = {
   },
   importantHints: {
     heading: 'Important Hints for Support Requests',
-    p1: 'Every OPTRONIC device carries identification markings on its rear or side panels — including type plates, type labels, inspection plates, and serial number labels. Component modules carry inspection plates and serial number labels.',
-    p2: 'When submitting a support request, please provide the device designation, article number, and serial number where possible. This allows us to identify your device uniquely and respond quickly and accurately.',
-    labelTypesHeading: 'Identification Label Types',
+    p1: 'Each device manufactured by OPTRONIC AG is labeled with a type plate and a control label. Additionally, depending on the device type, a type tape exists. Type plate, control label and type tape are located on the back side or a side wall of the device.\n\nOPTRONIC parts are equipped with a control label and a serial number tape.',
+    p2: 'If you have a request, please name device or part name, item number, and serial number!',
     labels: [
       {
-        title: 'Type Plate (Typenschild)',
-        description: 'Found on the device housing. Shows the device serial number and the application-specific device designation.',
-        examples: ['Serial number: e.g. 35303', 'Device designation: e.g. E3450'],
+        title: 'Type Plate',
+        imageAlt: 'OPTRONIC type plate label',
+        examples: [
+          '35303: Serial number of the device',
+          'E3450: Application-specific device name',
+        ],
       },
       {
-        title: 'Type Label (Typenkleber)',
-        description: 'A sticker version of the type plate, containing the same information. May be found on the side or rear of the device.',
-        examples: ['Device designation: e.g. E3450', 'Serial number: e.g. 35303'],
+        title: 'Type Tape',
+        imageAlt: 'OPTRONIC type tape label',
+        examples: [
+          'E3450: Application-specific device name',
+          '35303: Serial number of the device',
+        ],
       },
       {
-        title: 'Inspection Plate (Kontrollschild)',
-        description: 'Identifies component modules. Contains the OPTRONIC article number and internal inspection code.',
-        examples: ['Article number: e.g. 737.153.02', 'Inspection code: e.g. -1.10/33 or -1/10-80'],
+        title: 'Control Label',
+        imageAlt: 'OPTRONIC control label',
+        examples: [
+          '737.153.02: Part number of the device or component',
+          '-1.10/33 or -1/10-80: OPTRONIC internal inspection code',
+        ],
       },
       {
-        title: 'Serial Number Label (Seriennummernkleber)',
-        description: 'Found on individual component modules. Contains the component serial number for precise identification.',
-        examples: ['Serial number: e.g. SN2081310/1'],
+        title: 'Serial Number Tape',
+        imageAlt: 'OPTRONIC serial number tape on component',
+        examples: ['SN2081310/1: Serial number of the component'],
       },
     ],
-    journalNote: 'OPTRONIC maintains a journal for each control system, documenting all issues encountered and any work performed on the device. Please reference these records when contacting support.',
+    journalNote:
+      'The application specific device name and the device serial number are printed on the type plate and the type tape. The information serves for exact identification of the device. OPTRONIC AG keeps a journal for each control unit, that holds information about occurred problems and all work done.\n\nItem number and OPTRONIC internal inspection code are printed on the control label.',
   },
   componentLists: {
     heading: 'Component Lists for Older Control Systems',
@@ -231,7 +240,7 @@ export const supportDetailsDe: typeof supportDetailsEn = {
       description: 'Support für D- und E-Serien-Steuerungen',
     },
     importantHints: {
-      title: 'Wichtige Hinweise zu Supportanfragen',
+      title: 'Wichtige Hinweise für Supportanfragen',
       description: 'Welche Angaben wir für schnellen Support benötigen',
     },
     componentLists: {
@@ -252,21 +261,21 @@ export const supportDetailsDe: typeof supportDetailsEn = {
     },
   },
   omc300: {
-    heading: 'SERCOS Mehrachsen-CNC-Steuerung OMC300',
+    heading: 'SERCOS Multi-Achsen CNC-Controller OMC300',
     intro:
-      'PC-kompatibler VMEbus-Einplatinenrechner mit SERCOS-Schnittstelle. OMC300 ist das Ergebnis langjähriger Erfahrung in der Entwicklung von CNC-Steuerungen für industrielle Anwendungen.',
+      'PC-kompatibler VMEbus Single-Board Computer mit SERCOS Schnittstelle. Resultat jahrelanger Erfahrung bei der Entwicklung von CNC-Steuerungen für den industriellen Einsatz.',
     features: [
-      'CNC-Kern verarbeitet zugeordnete CNC-Befehlsfolgen in Echtzeit mit SERCOS-Antrieben',
-      'Anwendungsspezifische Erweiterung des CNC-Interpreters jederzeit möglich',
-      'CompactFlash-Slot für Betriebssystem, Applikation und Benutzerdaten',
-      'Ethernet-Schnittstelle',
-      'Vier schnelle, interruptfahige, galvanisch getrennte digitale Ein- und Ausgange',
-      'Inkrementalgeber-Eingang für Handradanschluss',
-      'Integriertes BIOS für industrielle Anwendungen - keine Batterie erforderlich',
-      'Betriebssystem OAGLinux für industrielle Echtzeitanwendungen',
-      'Hochauflösender Watchdog für kritische Echtzeitanwendungen',
-      'Wartungsfrei: keine Batterie, keine Lüfter',
-      'Umgebungstemperatur: 0 bis 40 C',
+      'CNC-Kern verarbeitet übergebene CNC-Kommando-Sequenzen in Echtzeit und übernimmt die komplette Ansteuerung der SERCOS Antriebe über die integrierte SERCOS-Schnittstelle',
+      'anwendungsbezogene Erweiterungen des CNC-Befehls-Interpreters zur optimalen Berücksichtigung von speziellen technologischen Anforderungen jederzeit möglich',
+      'CompactFlash Slot zum Einsatz von CompactFlash Karten für Betriebssystem, Applikation und Benutzerdaten',
+      'Ethernet Interface',
+      'Vier schnelle interruptfähige galvanisch getrennte digitale Eingänge und vier schnelle digitale galvanisch getrennte Ausgänge',
+      'Inkrementalgebereingang, z.B. für den Anschluss eines Handrades',
+      'integriertes BIOS ausgelegt für industrielle Applikationen: alle Einstellungen fest hinterlegt oder automatisch konfiguriert, keine Batterie für den Erhalt der Konfiguration notwendig',
+      'Betriebssystem OAGLinux: speziell für industrielle Echtzeitapplikationen ausgelegt',
+      'hochauflösender Watchdog: kurze Reaktionszeit für kritische Echtzeit-Applikationen',
+      'wartungsfrei: keine Batterie, lüfterloser Betrieb',
+      'Umgebungstemperatur: 0 bis 40°C',
     ],
   },
   cncObsolete: {
@@ -283,33 +292,42 @@ export const supportDetailsDe: typeof supportDetailsEn = {
       ' ist der optimale Ersatz für CRT-Bildschirme in Bedienstationen der Serien D1xx, E1xx und OPxx.',
   },
   importantHints: {
-    heading: 'Wichtige Hinweise zu Supportanfragen',
-    p1: 'Jedes OPTRONIC-Gerät trägt auf der Rück- oder Seitenwand Identifikationsmerkmale — darunter Typenschilder, Typenkleber, Kontrollschilder und Seriennummernkleber. Baugruppen tragen Kontrollschilder und Seriennummernkleber.',
-    p2: 'Bitte nennen Sie bei Supportanfragen wenn möglich Gerätebezeichnung, Artikelnummer und Seriennummer. Damit können wir Ihr Gerät eindeutig identifizieren und Ihre Anfrage schnell und präzise bearbeiten.',
-    labelTypesHeading: 'Arten von Identifikationsmerkmalen',
+    heading: 'Wichtige Hinweise für Supportanfragen',
+    p1: 'Jedes von OPTRONIC AG hergestellte Gerät ist mit einem Typenschild und einem Kontrollschild versehen. Zusätzlich ist abhängig vom Gerätetyp ein Typenkleber vorhanden. Die Schilder und der Typenkleber befinden sich auf der Rückseite oder einer Seitenwand des Gerätes.\n\nOPTRONIC-Baugruppen sind mit einem Kontrollschild und einem Seriennummernkleber ausgestattet.',
+    p2: 'Bitte nennen Sie bei Anfragen falls möglich Geräte- bzw. Baugruppenbezeichnung, Artikelnummer und Seriennummer!',
     labels: [
       {
         title: 'Typenschild',
-        description: 'Am Gerätegehäuse angebracht. Enthält die Seriennummer des Geräts sowie die anwendungsspezifische Gerätebezeichnung.',
-        examples: ['Seriennummer: z. B. 35303', 'Gerätebezeichnung: z. B. E3450'],
+        imageAlt: 'OPTRONIC Typenschild',
+        examples: [
+          '35303: Seriennummer des Geräts',
+          'E3450: Applikationsspezifische Gerätebezeichnung',
+        ],
       },
       {
         title: 'Typenkleber',
-        description: 'Eine Kleberversion des Typenschilds mit denselben Angaben. Befindet sich an der Seite oder Rückseite des Geräts.',
-        examples: ['Gerätebezeichnung: z. B. E3450', 'Seriennummer: z. B. 35303'],
+        imageAlt: 'OPTRONIC Typenkleber',
+        examples: [
+          'E3450: Applikationsspezifische Gerätebezeichnung',
+          '35303: Seriennummer des Geräts',
+        ],
       },
       {
         title: 'Kontrollschild',
-        description: 'Kennzeichnet einzelne Baugruppen. Enthält die OPTRONIC-Artikelnummer sowie den internen Prüfcode.',
-        examples: ['Artikelnummer: z. B. 737.153.02', 'Prüfcode: z. B. -1.10/33 oder -1/10-80'],
+        imageAlt: 'OPTRONIC Kontrollschild',
+        examples: [
+          '737.153.02: Artikelnummer des Geräts oder der Baugruppe',
+          '-1.10/33 oder -1/10-80: OPTRONIC-interner Prüfcode',
+        ],
       },
       {
         title: 'Seriennummernkleber',
-        description: 'Auf einzelnen Baugruppen angebracht. Enthält die Seriennummer der Baugruppe zur eindeutigen Identifikation.',
-        examples: ['Seriennummer: z. B. SN2081310/1'],
+        imageAlt: 'OPTRONIC Seriennummernkleber auf Baugruppe',
+        examples: ['SN2081310/1: Seriennummer der Baugruppe'],
       },
     ],
-    journalNote: 'OPTRONIC führt zu jeder Steuerung ein Journal, in dem aufgetretene Probleme und am Gerät vorgenommene Arbeiten dokumentiert werden. Bitte beziehen Sie sich bei Supportanfragen auf diese Aufzeichnungen.',
+    journalNote:
+      'Auf dem Typenschild und dem Typenkleber sind die applikationsspezifische Gerätebezeichnung sowie die Geräteseriennummer festgehalten. Die Angaben dienen zur eindeutigen Identifikation des Geräts. OPTRONIC AG führt zu jeder Steuerung ein Journal, das Auskunft gibt über allenfalls aufgetretene Problem und am Gerät vorgenommene Arbeiten.\n\nAuf dem Kontrollschild sind die Artikelnummer des Geräts sowie ein OPTRONIC-interner Prüfcode festgehalten.',
   },
   componentLists: {
     heading: 'Baugruppenlisten für ältere Steuerungen',
@@ -372,14 +390,14 @@ export const supportDetailsDe: typeof supportDetailsEn = {
     },
     fpdiHeading: 'FPDI200',
     fpdiIntro:
-      'Die Verarbeitung des TTL/CGA-Videosignals zur Darstellung des Bildes auf einem Flachbildschirm erfolgt durch die integrierte Schnittstellenkarte FPDI200. Für OEM-Lösungen ist die Karte separat erhältlich.',
+      'Die Aufbereitung des TTL/CGA Video Signals für die Anzeige auf einem Flachbildschirm erfolgt über die integrierte Interface-Karte FPDI200. Die Baugruppe ist für OEM-Lösungen separat erhältlich.',
     fpdiImageAlt: 'fpdi200',
     fpdiFeatures: [
-      'Unterstützte Videoformate: TTL/CGA Monochrom und RGB, VGA RGB analog',
-      'Unterstützte Synchronisationsarten: Separate VSYNC- und HSYNC-Signale, Sync-On-Green, Composite Sync',
-      'Maximale Signalfrequenz: Pixel-Takt: 12 bis 50MHz, HSYNC: 15 bis 110kHz, HSYNC: beliebig',
+      'unterstützte Videoformate: TTL/CGA monochrom und RGB, VGA RGB analog',
+      'unterstützte Synchronisationen: separate VSYNC und HSYNC Signale, Sync-On-Green, Composite Sync',
+      'maximale Signal-Frequenzen: Pixelclock: 12 bis 50MHz, HSYNC: 15 bis 110kHz, HSYNC: beliebig',
       'Versorgungsspannung: 5V +-10%',
-      'Leistungsaufnahme: 2W',
+      'Stromaufnahme: 2W',
       'Betriebstemperatur: 0° bis +40°C',
     ],
   },

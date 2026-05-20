@@ -77,15 +77,15 @@ const en = {
 
   // ── Sensors page ──
   sensors: {
-    title: 'Sensors',
-    description: 'Precision optical and photoelectrical sensors for industrial measurement, detection, and control applications',
+    title: 'Solutions for special sensor system problems',
+    description: '',
     items: [
-      { name: 'LVMC', title: 'Digital Light Screens / Light Grids', description: 'For Detecting, Counting, Measuring, Classifying and Quality Control', features: ['Self-learning optical sensor for detection, counting, measurement, classification, and quality control', 'High-precision counting and measuring', 'Advanced classification algorithms', 'Easy configuration and setup', 'High reliability'] },
-      { name: 'LV...M', title: 'Light Curtains / Light Grids', description: 'Detecting and Counting Any Kind of Small Objects', features: ['Versatile object detection', 'Gapless sensing area', 'Fast response time', 'Flexible mounting options', 'High detection accuracy'] },
-      { name: 'G15 / G35', title: 'Special-purpose Light Barriers', description: 'Special-purpose Light Barriers for usage in length measuring systems or as light curtains', features: ['Precision length measurement', 'High reliability', 'Robust construction', 'Easy integration', 'Long-range detection'] },
-      { name: 'OG23D / OG28D', title: 'Incremental Encoder', description: 'Rugged photoelectrical Incremental Encoders for usage under rough conditions', features: ['Extremely robust design', 'High signal quality', 'High rotation speed/frequency', 'Temperature resistant', 'High-resolution encoding'] },
-      { name: 'IRV / IRT', title: 'Self-Adjusting Inductive Loop Sensors', description: 'Contact-Free Detection of Metallic Material', features: ['Contact-free detection', 'Automatic sensitivity adjustment', 'High operational reliability', 'Metallic material detection', 'Gapless sensing area'] },
-      { name: 'IGV', title: 'Incremental Encoder Expanders', description: 'To Connect One Encoder Electrically Isolated to Up to Three Targets', features: ['Supports all standard encoder signals (A, A/, B, B/, C, C/, D, D/)', '5V, 12V, or 15V supply for connected encoders', 'For CNC, PLC, Measurement Equipment, etc.', 'Multi-target connectivity', '5V, 12V, or 15V supply for connected encoders'] },
+      { name: 'LVMC', title: 'Self-learning Digital Light Screens for detecting, counting, measuring and classifying', description: '', features: [] },
+      { name: 'LV...M', title: 'Light Curtains for detecting and counting any kind of small objects', description: '', features: [] },
+      { name: 'G15 / G35', title: 'Special-purpose Light Barriers for usage in length measuring systems or as light curtains', description: '', features: [] },
+      { name: 'OG23D / OG28D', title: 'Rugged photoelectrical Incremental Encoders for usage under rough conditions', description: '', features: [] },
+      { name: 'IRV / IRT', title: 'Self-Adjusting Inductive Loop Sensors for contact-free detection of metallic materials', description: '', features: [] },
+      { name: 'IGV', title: 'Incremental Encoder Expanders to connect one encoder electrically isolated to up to three targets (CNC, PLC, measurement equipment, etc.)', description: '', features: [] },
     ],
     learnMore: 'Learn More',
     ctaTitle: 'Need Help Choosing the Right Sensor?',
@@ -222,10 +222,6 @@ const en = {
       { title: 'Partnership', description: 'Building lasting relationships through collaboration and dedicated support.' },
       { title: 'Integrity', description: 'Operating with transparency, honesty, and ethical business practices.' },
     ],
-    ourJourney: 'Our Journey',
-    ourJourneyDesc: 'Key milestones in our growth and development.',
-    leadershipTeam: 'Leadership Team',
-    leadershipTeamDesc: 'Meet the experts driving our vision forward.',
   },
 
   // ── Footer ──
@@ -322,6 +318,16 @@ const en = {
       tableMinObject: 'Minimum Object Size',
       tableSensingArea: 'Sensing Area Size',
       tableDimensions: 'External Dimensions',
+    },
+
+    g15g35: {
+      overviewBadge: 'Measuring Light Barriers',
+      overviewHeading: 'Product Overview',
+      overviewDescription:
+        'The G15 and G35 measuring light barriers are special-purpose sensors for length measuring systems or as light curtains for object detection. With 100µs response time and accuracy down to ±0.5 mm, they deliver reliable results even under difficult conditions.',
+      downloadsHeading: 'Technical Documentation',
+      ctaTitle: 'Questions about G15 / G35?',
+      ctaDesc: 'Contact our technical team for consultation and configuration.',
     },
 
     lvm: {

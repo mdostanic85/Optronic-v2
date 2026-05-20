@@ -1,20 +1,16 @@
-'use client'
+
 
 import { useState } from 'react';
 import { ChevronDown, Search } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { PageHeader, Section, Container } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
 export function FAQsPage() {
   const { t } = useLanguage();
-  useDocumentHead(
-    'FAQ',
-    'Frequently asked questions about OPTRONIC products, sensors, CNC control systems, support services, and spare parts.',
-  );
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -54,6 +50,7 @@ export function FAQsPage() {
 
   return (
     <div>
+      <SEO title="FAQ" description="Frequently asked questions about OPTRONIC products, sensors, CNC control systems, support services, and spare parts." />
       <PageHeader
         title="Frequently Asked Questions"
         description="Find answers to common questions about our products, services, and support"
@@ -129,7 +126,7 @@ export function FAQsPage() {
               <h3 className="mb-4 text-2xl">{t.faqsPage.stillHaveQuestions}</h3>
               <p className="mb-6 text-op-on-dark-muted">{t.faqsPage.stillHaveQuestionsDesc}</p>
               <Button variant="secondary" asChild>
-                <Link href="/support/contact">{t.common.contactSupport}</Link>
+                <Link to="/support/contact">{t.common.contactSupport}</Link>
               </Button>
             </CardContent>
           </Card>

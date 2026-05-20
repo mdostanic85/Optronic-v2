@@ -1,4 +1,4 @@
-'use client'
+
 
 import { useEffect, useState, type ReactNode, type CSSProperties, type ElementType } from 'react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';

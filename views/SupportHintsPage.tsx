@@ -1,32 +1,35 @@
-'use client'
 
-import Link from 'next/link';
-import { ArrowLeft, Tag, Sticker, ClipboardList, Hash, Info } from 'lucide-react';
+
+import { Link } from 'react-router-dom';
+import { ArrowLeft, Info } from 'lucide-react';
 import { PageHeader, Section, Container, PageCTA, ButtonLink } from '../components/design-system';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useDocumentHead } from '../hooks/useDocumentHead';
+import { SEO } from '../src/components/SEO';
 
-const labelIcons = [Tag, Sticker, ClipboardList, Hash];
+const labelImages = [
+  '/assets/support-hints/type.jpg',
+  '/assets/support-hints/serial_device.jpg',
+  '/assets/support-hints/control.jpg',
+  '/assets/support-hints/serial_part.jpg',
+] as const;
 
 export function SupportHintsPage() {
   const { t, locale } = useLanguage();
   const sd = t.supportDetails;
   const hints = sd.importantHints;
 
-  useDocumentHead(
-    hints.heading,
-    hints.p2,
-  );
-
   return (
     <div>
+      <SEO title="Important Hints for Support Requests" description="Device identification information required for OPTRONIC support requests — type plates, labels, article numbers, and serial numbers." />
       <PageHeader
         title={hints.heading}
         description={hints.p1}
+        className="[&_p]:whitespace-pre-line"
       >
         <div className="mt-6">
           <Link
-            href={`/${locale}/support`}
+            to={`/${locale}/support`}
             className="inline-flex items-center gap-2 text-op-on-dark-muted transition-colors hover:text-op-on-dark"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -45,39 +48,39 @@ export function SupportHintsPage() {
               <p className="text-base text-op-ink">{hints.p2}</p>
             </div>
 
-            {/* Label types */}
-            <div>
-              <h2 className="mb-8 text-2xl font-medium text-op-ink">{hints.labelTypesHeading}</h2>
-              <div className="grid gap-6 sm:grid-cols-2">
-                {hints.labels.map((label, i) => {
-                  const Icon = labelIcons[i];
-                  return (
-                    <div
-                      key={label.title}
-                      className="rounded-xl border border-op-border bg-white p-6 shadow-sm"
-                    >
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-op-primary-muted">
-                        <Icon className="h-6 w-6 text-op-primary" />
-                      </div>
-                      <h3 className="mb-2 text-lg font-medium text-op-ink">{label.title}</h3>
-                      <p className="mb-4 text-sm text-op-body leading-relaxed">{label.description}</p>
-                      <ul className="space-y-1.5">
-                        {label.examples.map((ex) => (
-                          <li key={ex} className="flex items-start gap-2 text-sm text-op-body">
-                            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-op-primary" />
-                            {ex}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  );
-                })}
-              </div>
+            {/* Label types — card layout with live-site copy and photos */}
+            <div className="grid gap-6 sm:grid-cols-2">
+              {hints.labels.map((label, i) => (
+                <div
+                  key={label.title}
+                  className="overflow-hidden rounded-xl border border-op-border bg-white shadow-sm"
+                >
+                  <div className="border-b border-op-border bg-op-surface-muted p-4">
+                    <ImageWithFallback
+                      src={labelImages[i]}
+                      alt={label.imageAlt}
+                      className="mx-auto h-auto max-h-40 w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="mb-4 text-lg font-medium text-op-ink">{label.title}</h3>
+                    <ul className="space-y-2">
+                      {label.examples.map((ex) => (
+                        <li key={ex} className="text-sm text-op-body leading-relaxed">
+                          {ex}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Journal note */}
             <div className="rounded-xl bg-op-surface-muted p-6">
-              <p className="text-sm text-op-body leading-relaxed">{hints.journalNote}</p>
+              <p className="whitespace-pre-line text-sm text-op-body leading-relaxed">{hints.journalNote}</p>
             </div>
 
           </div>
