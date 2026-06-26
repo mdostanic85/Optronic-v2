@@ -114,6 +114,13 @@ const de = {
     ctaTitle: 'Kundenspezifische Steuerungslösungen',
     ctaDesc: 'Suchen Sie eine maßgeschneiderte Steuerungslösung für Ihre spezifischen Anforderungen? Unser Ingenieurteam kann Lösungen für Ihre individuellen Bedürfnisse entwickeln.',
     ctaButton: 'Projekt besprechen',
+    overviewTitle: 'Ihr zuverlässiger Partner bei der Lösung spezifischer Steuerungsprobleme',
+    overviewLearnMore: 'mehr',
+    overviewItems: [
+      { name: 'D500 / E3000', description: 'Echtzeitfähige Multi-Achsen CNC D500 mit Bedienstaton E3000 für den harten industriellen Einsatz' },
+      { name: 'OAGLinux', description: 'Linux basiertes industrielles Echtzeitbetriebssystem' },
+      { name: 'CNC D571', description: 'CNC für synchron mitlaufende Trenneinrichtungen (fliegende Sägen)' },
+    ],
   },
 
   // ── Support page ──
@@ -122,9 +129,7 @@ const de = {
     description: 'Support für Legacy-Systeme, Ersatzteile, Reparaturen und Retrofit-Lösungen für OPTRONIC Produkte.',
     intro: [
       'Für diverse Produkte früherer Generationen sind kompatible aktuelle Ersatzprodukte verfügbar.',
-      'Für ältere Generationen und kompatible aktuelle Ersatzteile bieten wir umfassende Support-Lösungen.',
       'Kontaktieren Sie uns bei Problemen und Fragen zu unseren Produkten. Bitte nennen Sie bei Anfragen falls möglich Gerätebezeichnung, Artikelnummer und Seriennummer.',
-      'Kontaktieren Sie uns bei Problemen und Fragen zu unseren Produkten. Bitte geben Sie Typ, Seriennummer, Artikelnummer und Beschreibung an.',
     ],
     ourServices: 'Unsere Support-Leistungen',
     services: [
@@ -139,6 +144,18 @@ const de = {
     readyDesc: 'Kontaktieren Sie unser technisches Team mit Ihrer Support-Anfrage',
     contactTeam: 'Support-Team kontaktieren',
     overview: 'Übersicht',
+    galleryItems: {
+      e3000: 'Bedienstation E3000',
+      e100: 'Bedienstation E100',
+      d107_d140: 'Steuerungen D107 / D140',
+      d111_d115_d141: 'Steuerungen D111 / D115 / D141',
+      gf: 'Steuerungen GF',
+      fsu_crt: 'FSU200 / CRT-Ersatz',
+      lv100: 'Lichtvorhänge LV100',
+      og_flange: 'Inkrementale Drehgeber OG',
+      d145: 'Steuerung D145 / OMC300',
+      d376_d377: 'Steuerungen D376 / D377',
+    },
     needHelp: 'Sofortige Hilfe benötigt?',
     email: 'E-Mail',
     phone: 'Telefon',
@@ -210,7 +227,7 @@ const de = {
     description: 'Seit über 60 Jahren führend in optischen und elektronischen Lösungen.',
     ourStory: 'Unsere Geschichte',
     storyParagraphs: [
-      'OPTRONIC AG wurde 1961 als Unternehmen für Entwicklung und Herstellung sowie Vertrieb von opto-elektronischen Geräten gegründet.',
+      '<strong>OPTRONIC AG</strong> wurde 1961 als Unternehmen für Entwicklung und Herstellung sowie Vertrieb von opto-elektronischen Geräten gegründet.',
       'Heute umfasst das Leistungsangebot von OPTRONIC AG Lösungen für besondere Anforderungen in den Bereichen industrielle Steuerungstechnik und Sensorik sowie kundenspezifische Hardware- und Software-Entwicklung.',
       '',
     ],
@@ -430,6 +447,7 @@ const de = {
         'In entsprechender Konfiguration kann die CNC D571 auch statt älterer OPTRONIC-Steuerungen für synchron mitlaufendes Trennen (D115, D141, D151, D171) eingesetzt werden.',
       imageAltPrimary: 'CNC D571',
       imageAltSecondary: 'Bedienstation E3000 zur CNC D571',
+      e3000Badge: 'Bedienstation E3000',
       keyFeatures: 'Funktionen der CNC D571',
       features: [
         'Lageregelung und Geschwindigkeitssteuerung des Sägewagens für ortssynchrones und geschwindigkeitssynchrones Fahren mit der Trennstelle.',

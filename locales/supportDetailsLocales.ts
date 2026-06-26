@@ -18,11 +18,11 @@ export const supportDetailsEn = {
       description: 'What to include for faster and accurate support',
     },
     componentLists: {
-      title: 'Component Lists for Older Control Systems',
+      title: 'Components lists for Older Control Systems',
       description: 'Component lists with order numbers for older systems',
     },
     fsu200: {
-      title: 'FSU200 / FPDI200: Replacement for CRT Screens',
+      title: 'FSU200 / FPDI200: Replacement for CRT Screen',
       description: 'Flat-screen replacement solutions for CRT monitors',
     },
     lvObsolete: {
@@ -30,40 +30,65 @@ export const supportDetailsEn = {
       description: 'Support for LV series light curtains',
     },
     ogObsolete: {
-      title: 'Replacement for Incremental Encoders OG2D / OG7D / OG8D /OG14D',
+      title: 'Incremental Encoder OG2D / OG7D / OG8D /OG14D',
       description: 'Replacement for older incremental encoders',
     },
   },
   omc300: {
+    coverTitle: 'OMC300',
+    coverSubtitle: 'PC Compatible VMEbus Single-Board Computer with SERCOS Interface',
     heading: 'SERCOS Multi-Axes CNC Controller OMC300',
-    intro:
-      'PC compatible VMEbus single-board computer with SERCOS interface. OMC300 is the result of long-lasting experience in developing CNC control systems for industrial applications.',
+    overviewP1:
+      'Result of long lasting experiences in developing CNC Control Systems for industrial applications. The CNC core processes assigned CNC command sequences in real-time and handles the complete control of the SERCOS Drives over the integrated SERCOS Interface. Application-specific extension of the CNC command interpreter are possible at any time, in order to incorporate special technological requirements.',
+    featuresDesc: '',
+    downloads: [
+      { label: 'OMC300', href: '/downloads/de/cnc/OMC300.pdf' },
+      {
+        label: 'Operating Instructions OAGLinux V2.2',
+        href: '/downloads/de/cnc/OS.401_030603_Bedienungsanleitung_OAGLinux_V2.2.pdf',
+      },
+    ],
+    downloadsTitle: 'Technical Documentation',
+    downloadsDesc: 'Access product datasheets and documentation',
     features: [
-      'CNC core processes assigned CNC command sequences in real-time with SERCOS drives',
-      'Application-specific extension of the CNC command interpreter possible at any time',
-      'CompactFlash slot for operating system, application, and user data',
-      'Ethernet interface',
-      'Four fast interrupt-capable electrically isolated digital inputs and outputs',
-      'Incremental encoder input for handwheel connection',
-      'Integrated BIOS designed for industrial applications - no battery needed',
-      'Operating system OAGLinux for industrial real-time applications',
-      'High-resolution watchdog for critical real-time applications',
-      'Maintenance-free: no battery, no fans',
-      'Ambient temperature: 0 to 40 C',
+      'Result of long lasting experiences in developing CNC Control Systems for industrial applications',
+      'CNC core processes assigned CNC command sequences in real-time and handles the complete control of the SERCOS Drives over the integrated SERCOS Interface',
+      'Application-specific extension of the CNC command interpreter are possible at any time, in order to incorporate special technological requirements',
+      'CompactFlash Slot to use CompactFlash cards for operating system, application, and user data',
+      'Ethernet Interface',
+      'Four fast interrupt-capable electrically isolated digitale inputs, and four fast electrically isolated digital outputs',
+      'Incremental Encoder Input, in order to connect a handwheel, for example',
+      'Inegrated BIOS designed for industrial applications: All settings are stored non-volatile or are configured automatically, no battery is necessary to keep the configuration settings',
+      'Operating System OAGLinux: Designed for industrial real-time applications',
+      'High-Resolution Watchdog: Short reaction time for critical real-time applications',
+      'Maintenance-Free: No battery, no fans',
+      'Ambient temperature: 0 to 40°C',
     ],
   },
   cncObsolete: {
-    heading: 'Notes for Control Systems D100 / D200 / D300 / E100',
-    p1: 'For control systems in the D100 / D200 / D300 / E100 series, various replacement parts are still available. Please contact us.',
-    p2: 'For each control system in the D100 / D300 / E100 series, OPTRONIC AG offers a component list with OPTRONIC parts and order numbers.',
+    coverTitle: 'Notes for Control Systems of Type Series D100 / D200 / D300 / E100',
+    coverDownloadLabel: 'OPTRONIC Rechargeable Battery Pack',
+    orderingTitle: 'Ordering of Replacement Parts',
+    p1: 'Also for control systems of series 100 / D200 / D300 / E100 various replacement parts are still available. Please contact us.',
+    p2BeforeLink: 'For each control system of type series D100 / D300 / E100, OPTRONIC AG offers a ',
+    p2LinkText: 'Components Lists',
+    p2AfterLink:
+      '. The list holds all OPTRONIC parts that are components of the device, together with their order numbers.',
+    p3: 'Components lists for not listed control systems are available on request.',
     batteryTitle: 'OPTRONIC Rechargeable Battery Pack',
-    batteryDesc:
-      'Most control systems in the D100 / D200 / D300 / E100 series are equipped with an OPTRONIC rechargeable battery pack (item number 510.330.02) to supply the main memory while power is turned off. To ensure trouble-free operation, the battery pack should be replaced after three years of usage.',
-    replacingTitle: 'Replacing the CRT Screen',
+    batteryBeforeLink:
+      'Most control systems of type series D100 / D200 / D300 / E100 are equipped with a ',
+    batteryLinkText: 'OPTRONIC Rechargeable Battery Pack (item number 510.330.02)',
+    batteryAfterLink:
+      ' to supply the main memory while power is turned off. To ensure toruble-free operation, the battery pack should be replaced after three years of usage.',
+    replacingTitle: 'Replacing the CRT Screen by the Flat-Screen Monitor Unit FSU200',
     replacingPrefix: 'The ',
     replacingLinkText: 'Flat-Screen Monitor Unit FSU200',
     replacingSuffix:
-      ' is the optimum replacement for CRT screens in operating stations of the D1xx, E1xx and OPxx series.',
+      ' is the optimum replacement for the CRT screens in the operating stations of the type series D1xx, E1xx and OPxxx.',
+    imageAltD100ps: 'd100ps',
+    imageAltAccu: 'accu',
+    imageAltFsu200: 'fsu200',
   },
   importantHints: {
     heading: 'Important Hints for Support Requests',
@@ -115,21 +140,20 @@ export const supportDetailsEn = {
     },
   },
   fsu200: {
-    heading: 'FSU200 / FPDI200: Replacement for CRT Screens',
-    intro:
-      'Replacement for CRT screens with TTL/CGA interface. The FSU200 series provides modern flat-screen replacements for CRT monitors in OPTRONIC control systems and SIEMENS S5 based devices with WF470 video interface.',
+    coverTitle: 'FSU200 / FPDI200',
+    coverSubtitle: 'Replacement for CRT Screens With TTL/CGA Interface',
     imageAltMain: 'fsu200_crt',
     featuresTitle: 'FSU201 / FSU202 / FSU211',
     features: [
       'Replacement for old CRT Screens with TTL/CGA interface',
-      'For OPTRONIC control systems D1xx, E1xx, E7xx, and OP500',
+      'Dor OPTRONIC control systems D1xx, E1xx, E7xx, and OP500',
       'For SIEMENS S5 based devices with WF470 video interface (SIEMENS order number 6FM1470-xxxxx)',
       'Already pre-configured for OPTRONIC control systems',
       'Easy installation',
       'Perfect image, no flickering, no noise',
       'Intuitive on-screen menu, easily operable by use of three buttons',
       '10,4" flat screen, 640x480 pixel',
-      'Supply voltage: 100–240 V AC',
+      'Versorgungsspannung: 100-240V AC',
     ],
     tableTitle: 'FSU200: Standard Models',
     table: {
@@ -146,13 +170,13 @@ export const supportDetailsEn = {
           name: 'FSU202',
           display: 'TTL Color Display',
           usage:
-            'Configured for OPTRONIC OP500, or devices with SIEMENS WF470 (6FM1470-xxxxx), respectively Active Video Cable optionally available',
+            'Configured for OPTRONIC OP500, or devices with SIEMENS WF470 (6FM1470-xxxxx), respectively\nActive Video Cable optionally available',
         },
         {
           name: 'FSU203',
           display: 'TTL Color Display',
           usage:
-            'Configured for OPTRONIC OP500, or devices with SIEMENS WF470 (6FM1470-xxxxx), respectively with active video cable',
+            'Configured for OPTRONIC OP500, or devices with SIEMENS WF470 (6FM1470-xxxxx), respectively\nWith Active Video Cable',
         },
         {
           name: 'FSU211',
@@ -161,6 +185,29 @@ export const supportDetailsEn = {
         },
       ],
     },
+    downloads: [
+      { label: 'Operating Instructions to the FSU201' },
+      {
+        label:
+          'Replacement Guide: Replacing the D145F/D150F CRT Monitor by the Monitor Unit FSU201',
+      },
+      { label: 'Replacement Guide: Replacing the E102 CRT Monitor by the Monitor Unit FSU201' },
+      {
+        label:
+          'Replacement Guide: Replacing the E114/E152/E153 CRT Monitor by the Monitor Unit FSU201',
+      },
+      { label: 'Operating Instructions to the FSU202' },
+      { label: 'Replacement Guide: Replacing the OP500 CRT Monitor by the Monitor Unit FSU202' },
+      { label: 'Instructions: Active Video Cable for OP500 Monitor Unit FSU202' },
+      { label: 'Operating Instructions to the FSU203' },
+      { label: 'Replacement Guide: Replacing the OP500 CRT Monitor by the Monitor Unit FSU203' },
+      { label: 'Operating Instructions to the FSU211' },
+      {
+        label:
+          'Replacement Guide: Replacing the D145F/D150F CRT Monitor and the Power Supply by the Monitor Unit FSU211',
+      },
+      { label: 'FPDI200: TTL/VGA/DVI to Parallel LCD Video Signal Converter' },
+    ],
     fpdiHeading: 'FPDI200',
     fpdiIntro:
       'Processing of the TTL/CGA video signal in order to present the image on a flat screen is done by the integrated interface card FPDI200. For OEM solutions, the card is separately available.',
@@ -175,9 +222,11 @@ export const supportDetailsEn = {
     ],
   },
   lvObsolete: {
-    heading: 'Support for Light Screens LV100 / LV100D / LV150 / LV150D',
+    coverTitle: 'Support for Light Screens LV100 / LV100D / LV150 / LV150D',
     intro:
       'OPTRONIC AG offers support and repair service for all devices of previous type series. The first light screens were already delivered in the seventies. Replacement parts are still available for this devices. Additionally, with small adaptions, various devices of the actual type series LV...M can be used as replacement for light screens of type series LV...D.',
+    imageAltLv100Lvs: 'lv100_lvs',
+    imageAltLv100d: 'lv100d',
     replacementPartsTitle: 'Replacement Parts for LV100, LV100D, LV150, and LV150D',
     additionalPartsNote: 'Additional not named parts on request. Please name the serial number.',
     replacementByTitle: 'Light Screens LV...M as Replacement for LV100D and LV150D',
@@ -198,17 +247,23 @@ export const supportDetailsEn = {
       replacementPart: 'Replacement Part',
       itemNumber: 'Item Number',
       rows: [
-        { screen: 'LV100D', problem: 'Aging of the light source', part: 'Transmitter / receiver block', item: '327.203.01' },
-        { screen: 'LV100D', problem: 'Mechanical damage', part: 'Mirror set', item: '101.006.01/02' },
-        { screen: 'LV150D', problem: 'Mechanical damage', part: 'Mirror set', item: '101.010/011' },
-        { screen: 'LV100', problem: 'Aging of the light source', part: 'Light bulb with centering flange', item: '115.2' },
-        { screen: 'LV100', problem: 'Mechanical damage', part: 'Mirror set', item: '101.006.01/02' },
-        { screen: 'LV100', problem: 'Pollution indicator not working', part: 'Indicating instrument', item: '118.100.03' },
-        { screen: 'LV150', problem: 'Aging of the light source', part: 'Light bulb with centering flange', item: '115.2' },
-        { screen: 'LV150', problem: 'Mechanical damage', part: 'Mirror set', item: '101.010/011' },
-        { screen: 'LV150', problem: 'Pollution indicator not working', part: 'Indicating instrument', item: '118.100.03' },
+        { screen: 'LV100D', problem: 'Aging of the light source', part: 'Sender / Receiver block', item: '327.203.01' },
+        { screen: 'LV100D', problem: 'Mechanical Damage', part: 'Mirror Set', item: '101.006.01/02' },
+        { screen: 'LV150D', problem: 'Mechanical Damage', part: 'Mirror Set', item: '101.010/011' },
+        { screen: 'LV100', problem: 'Aging of the light source', part: 'Light Bulb with Centering Flange', item: '115.2' },
+        { screen: 'LV100', problem: 'Mechanical Damage', part: 'Mirror Set', item: '101.006.01/02' },
+        { screen: 'LV100', problem: 'Pollution Indicator Not Working', part: 'Indicating Instrument', item: '118.100.03' },
+        { screen: 'LV150', problem: 'Aging of the light source', part: 'Light Bulb with Centering Flange', item: '115.2' },
+        { screen: 'LV150', problem: 'Mechanical Damage', part: 'Mirror Set', item: '101.010/011' },
+        { screen: 'LV150', problem: 'Pollution Indicator Not Working', part: 'Indicating Instrument', item: '118.100.03' },
       ],
     },
+    downloads: [
+      { label: 'Datasheet to Light Screen LV100D' },
+      { label: 'Light Screen LV100D: Replacing the Emitter / Receiver Block' },
+      { label: 'Light Screen LV100D, LV150D, LV100, LV150: Replacing the Mirrors' },
+      { label: 'Light Screen LV100D, LV150D: Compatibility with Light Screens LV…M' },
+    ],
   },
   ogObsolete: {
     heading: 'Compatibility to Older OPTRONIC Incremental Encoders',
@@ -240,38 +295,51 @@ export const supportDetailsDe: typeof supportDetailsEn = {
       description: 'Support für D- und E-Serien-Steuerungen',
     },
     importantHints: {
-      title: 'Wichtige Hinweise für Supportanfragen',
+      title: 'Wichtige Hinweise zu Supportanfragen',
       description: 'Welche Angaben wir für schnellen Support benötigen',
     },
     componentLists: {
-      title: 'Baugruppenlisten für ältere Steuerungen',
+      title: 'Baugruppenlisten zu älteren Steuerungen',
       description: 'Baugruppenlisten mit Bestellnummern für ältere Systeme',
     },
     fsu200: {
-      title: 'FSU200 / FPDI200: Ersatz für CRT-Monitore',
+      title: 'FSU200 / FPDI200: Ersatz für CRT-Monitor',
       description: 'Flachbild-Ersatzlösungen für CRT-Monitore',
     },
     lvObsolete: {
-      title: 'Light Screens LV100 / LV100D / LV150 / LV150D',
-      description: 'Support for LV series light curtains',
+      title: 'Lichtvorhänge LV100 / LV100D / LV150 / LV150D',
+      description: 'Support für LV-Lichtvorhang-Serien',
     },
     ogObsolete: {
-      title: 'Ersatz für Inkrementale Drehgeber OG2D / OG7D / OG8D /OG14D',
+      title: 'Inkrementale Drehgeber OG2D / OG7D / OG8D /OG14D',
       description: 'Ersatz für ältere Inkrementalgeber',
     },
   },
   omc300: {
+    coverTitle: 'OMC300',
+    coverSubtitle: 'PC-kompatibler VMEbus Single-Board Computer mit SERCOS Schnittstelle',
     heading: 'SERCOS Multi-Achsen CNC-Controller OMC300',
-    intro:
-      'PC-kompatibler VMEbus Single-Board Computer mit SERCOS Schnittstelle. Resultat jahrelanger Erfahrung bei der Entwicklung von CNC-Steuerungen für den industriellen Einsatz.',
+    overviewP1:
+      'Resultat jahrelanger Erfahrung bei der Entwicklung von CNC-Steuerungen für den industriellen Einsatz. Der CNC-Kern verarbeitet übergebene CNC-Kommando-Sequenzen in Echtzeit und übernimmt die komplette Ansteuerung der SERCOS-Antriebe über die integrierte SERCOS-Schnittstelle. Anwendungsbezogene Erweiterungen des CNC-Befehls-Interpreters zur Berücksichtigung spezieller technologischer Anforderungen sind jederzeit möglich.',
+    featuresDesc: '',
+    downloads: [
+      { label: 'OMC300', href: '/downloads/de/cnc/OMC300.pdf' },
+      {
+        label: 'Bedienungsanleitung OAGLinux V2.2',
+        href: '/downloads/de/cnc/OS.401_030603_Bedienungsanleitung_OAGLinux_V2.2.pdf',
+      },
+    ],
+    downloadsTitle: 'Technische Dokumentation',
+    downloadsDesc: 'Zugang zu Produktdatenblättern und Dokumentation',
     features: [
+      'Resultat jahrelanger Erfahrung bei der Entwicklung von CNC-Steuerungen für den industriellen Einsatz',
       'CNC-Kern verarbeitet übergebene CNC-Kommando-Sequenzen in Echtzeit und übernimmt die komplette Ansteuerung der SERCOS Antriebe über die integrierte SERCOS-Schnittstelle',
       'anwendungsbezogene Erweiterungen des CNC-Befehls-Interpreters zur optimalen Berücksichtigung von speziellen technologischen Anforderungen jederzeit möglich',
       'CompactFlash Slot zum Einsatz von CompactFlash Karten für Betriebssystem, Applikation und Benutzerdaten',
       'Ethernet Interface',
       'Vier schnelle interruptfähige galvanisch getrennte digitale Eingänge und vier schnelle digitale galvanisch getrennte Ausgänge',
       'Inkrementalgebereingang, z.B. für den Anschluss eines Handrades',
-      'integriertes BIOS ausgelegt für industrielle Applikationen: alle Einstellungen fest hinterlegt oder automatisch konfiguriert, keine Batterie für den Erhalt der Konfiguration notwendig',
+      'integriertes BIOS ausgelegt für industrielle Applikationen:  alle Einstellungen fest hinterlegt oder automatisch konfiguriert, keine Batterie für den Erhalt der Konfiguration notwendig',
       'Betriebssystem OAGLinux: speziell für industrielle Echtzeitapplikationen ausgelegt',
       'hochauflösender Watchdog: kurze Reaktionszeit für kritische Echtzeit-Applikationen',
       'wartungsfrei: keine Batterie, lüfterloser Betrieb',
@@ -279,17 +347,29 @@ export const supportDetailsDe: typeof supportDetailsEn = {
     ],
   },
   cncObsolete: {
-    heading: 'Hinweise zu Steuerungen D100 / D200 / D300 / E100',
-    p1: 'Für Steuerungen der Serien D100 / D200 / D300 / E100 sind weiterhin verschiedene Ersatzteile verfügbar. Bitte kontaktieren Sie uns.',
-    p2: 'Für jede Steuerung der Serien D100 / D300 / E100 bietet OPTRONIC AG eine Baugruppenliste mit OPTRONIC-Teilen und Bestellnummern an.',
+    coverTitle: 'Hinweise zu Steuerungen der Baureihen D100 / D200 / D300 / E100',
+    coverDownloadLabel: 'OPTRONIC-Akkumodul',
+    orderingTitle: 'Bestellung von Ersatz-Baugruppen',
+    p1: 'Auch für Steuerungen der Baureihen D100 / D200 / D300 / E100 sind noch diverse Ersatz-Baugruppen verfügbar. Bitte kontaktieren Sie uns.',
+    p2BeforeLink: 'OPTRONIC AG führt zu jeder Steuerung der Baureihen D100 / D300 / E100 eine ',
+    p2LinkText: 'Baugruppenliste',
+    p2AfterLink:
+      ', in der alle im Gerät eingesetzten OPTRONIC-Baugruppen zusammen mit den Bestellnummern aufgeführt sind.',
+    p3: 'Baugruppenlisten zu nicht aufgeführten Steuerungen sind auf Anfrage erhältlich.',
     batteryTitle: 'OPTRONIC-Akkumodul',
-    batteryDesc:
-      'Die meisten Steuerungen der Serien D100 / D200 / D300 / E100 sind mit einem OPTRONIC-Akkumodul (Artikelnummer 510.330.02) ausgerüstet, um den Hauptspeicher bei ausgeschalteter Versorgung zu puffern. Für einen störungsfreien Betrieb sollte das Akkumodul nach drei Jahren ersetzt werden.',
-    replacingTitle: 'Ersatz des CRT-Bildschirms',
+    batteryBeforeLink:
+      'Die meisten Steuerungen der Baureihen D100 / D200 / D300 / E100 enthalten ein ',
+    batteryLinkText: 'OPTRONIC-Akkumodul (Artikelnummer 510.330.02)',
+    batteryAfterLink:
+      ' zur Stromversorgung des Hauptspeichers bei ausgeschaltetem Gerät. Um einen störungsfreien Betrieb zu gewährleisten, sollte das Akkumodul nach drei Jahre ausgetauscht werden.',
+    replacingTitle: 'Ersatz des CRT-Monitors durch die Flachbildschirm-Monitorbaugruppe FSU200',
     replacingPrefix: 'Die ',
-    replacingLinkText: 'Flat-Screen Monitor Unit FSU200',
+    replacingLinkText: 'Flachbildschirm-Monitorbaugruppe FSU200',
     replacingSuffix:
-      ' ist der optimale Ersatz für CRT-Bildschirme in Bedienstationen der Serien D1xx, E1xx und OPxx.',
+      ' ist der optimale Ersatz für die in den Bedienstationen der Baureihen D1xx, E1xx und OPxxx eingesetzen CRT-Monitore.',
+    imageAltD100ps: 'd100ps',
+    imageAltAccu: 'accu',
+    imageAltFsu200: 'fsu200',
   },
   importantHints: {
     heading: 'Wichtige Hinweise für Supportanfragen',
@@ -341,9 +421,8 @@ export const supportDetailsDe: typeof supportDetailsEn = {
     },
   },
   fsu200: {
-    heading: 'FSU200 / FPDI200: Ersatz für CRT-Monitore',
-    intro:
-      'Ersatz für CRT-Bildschirme mit TTL/CGA-Schnittstelle. Die FSU200-Serie bietet moderne Flachbild-Ersatzlösungen für CRT-Monitore in OPTRONIC-Steuerungen und SIEMENS-S5-basierten Geräten mit WF470 Grafikkarte.',
+    coverTitle: 'FSU200 / FPDI200',
+    coverSubtitle: 'Ersatz für CRT-Monitore mit TTL/CGA-Schnittstelle',
     imageAltMain: 'fsu200_crt',
     featuresTitle: 'FSU201 / FSU202 / FSU211',
     features: [
@@ -388,6 +467,20 @@ export const supportDetailsDe: typeof supportDetailsEn = {
         },
       ],
     },
+    downloads: [
+      { label: 'Bedienungsanleitung zu FSU201' },
+      { label: 'Austauschanleitung: Ersatz des D145F/D150F CRT-Monitors durch FSU201' },
+      { label: 'Austauschanleitung: Ersatz des E102 CRT-Monitors durch FSU201' },
+      { label: 'Austauschanleitung: Ersatz des E114/E152/E153 CRT-Monitors durch FSU201' },
+      { label: 'Bedienungsanleitung zu FSU202' },
+      { label: 'Austauschanleitung: Ersatz des OP500 CRT-Monitors durch FSU202' },
+      { label: 'Anleitung: Aktives Videokabel zu FSU202' },
+      { label: 'Bedienungsanleitung zu FSU203' },
+      { label: 'Austauschanleitung: Ersatz des OP500 CRT-Monitors durch FSU203' },
+      { label: 'Bedienungsanleitung zu FSU211' },
+      { label: 'Austauschanleitung: Ersatz des D145F/D150F CRT-Monitors durch FSU211' },
+      { label: 'FPDI200: TTL/VGA/DVI to Parallel LCD Video Signal Converter' },
+    ],
     fpdiHeading: 'FPDI200',
     fpdiIntro:
       'Die Aufbereitung des TTL/CGA Video Signals für die Anzeige auf einem Flachbildschirm erfolgt über die integrierte Interface-Karte FPDI200. Die Baugruppe ist für OEM-Lösungen separat erhältlich.',
@@ -402,9 +495,11 @@ export const supportDetailsDe: typeof supportDetailsEn = {
     ],
   },
   lvObsolete: {
-    heading: 'Support zu Lichtvorhängen LV100 / LV100D / LV150 / LV150D',
+    coverTitle: 'Support zu Lichtvorhängen LV100 / LV100D / LV150 / LV150D',
     intro:
-      'OPTRONIC AG bietet Support und Reparaturdienst zu allen Geräten aus früheren Baureihen. Die ersten Lichtvorhänge wurden bereits in den 70er Jahren geliefert. Auch zu diesen Geräten sind nach wie vor Ersatzteile lieferbar. Außerdem eignen sich verschiedene Geräte aus der aktuellen Baureihe LV...M mit geringfügigen Adaptionen als Ersatz für Lichtvorhänge vom Typ LV...D.',
+      'OPTRONIC AG bietet Support und Reparaturdienst zu allen Geräten aus früheren Baureihen. Die ersten Lichtvorhänge wurden bereits in den 70er Jahren geliefert. Auch zu diesen Geräten sind nach wie vor Ersatzteile lieferbar. Ausserdem eignen sich verschiedene Geräte aus der aktuellen Baureihe LV...M mit geringfügigen Adaptionen als Ersatz für Lichtvorhänge vom Typ LV...D.',
+    imageAltLv100Lvs: 'lv100_lvs',
+    imageAltLv100d: 'lv100d',
     replacementPartsTitle: 'Ersatzteile zu LV100, LV100D, LV150 und LV150D',
     additionalPartsNote: 'Weitere nicht genannte Teile auf Anfrage. Bitte nennen Sie die Seriennummer.',
     replacementByTitle: 'Lichtvorhänge LV...M als Ersatz für LV100D und LV150D',
@@ -436,6 +531,12 @@ export const supportDetailsDe: typeof supportDetailsEn = {
         { screen: 'LV150', problem: 'keine Verschmutzungsanzeige', part: 'Anzeige-Instrument', item: '118.100.03' },
       ],
     },
+    downloads: [
+      { label: 'Datenblatt zum Lichtvorhang LV100D und LV150D' },
+      { label: 'Lichtvorhang LV100D: Auswechseln des Sender- / Empfängerblocks 327.203.01' },
+      { label: 'Lichtvorhang LV100D, LV150D, LV100, LV150: Ersetzen der Spiegel' },
+      { label: 'Lichtvorhang LV100D, LV150D: Kompatibilität mit Lichtvorhängen LV...M' },
+    ],
   },
   ogObsolete: {
     heading: 'Kompatibilität zu älteren OPTRONIC-Inkrementalgebern',

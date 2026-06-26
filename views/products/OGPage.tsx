@@ -144,8 +144,19 @@ export function OGPage() {
         </Container>
       </Section>
 
+      <Section variant="surface" spacing="default">
+        <Container>
+          <ProductSectionHeader
+            badge={og?.downloadsSectionBadge || t.productPages.resourcesDownloads}
+            title={og?.downloadsHeading || t.productPages.lvm.downloadsTitle}
+            description={og?.downloadsDescription}
+          />
+          <ProductDownloadsList downloads={page.downloads} />
+        </Container>
+      </Section>
+
       {modelsTable ? (
-        <Section variant="surface" spacing="default">
+        <Section variant="muted" spacing="default">
           <Container>
             <ProductSectionHeader
               badge={og?.modelsSectionBadge || t.productPages.availableModels}
@@ -182,17 +193,6 @@ export function OGPage() {
           </Container>
         </Section>
       ) : null}
-
-      <Section variant="muted" spacing="default">
-        <Container>
-          <ProductSectionHeader
-            badge={og?.downloadsSectionBadge || t.productPages.resourcesDownloads}
-            title={og?.downloadsHeading || t.productPages.lvm.downloadsTitle}
-            description={og?.downloadsDescription}
-          />
-          <ProductDownloadsList downloads={page.downloads} />
-        </Container>
-      </Section>
 
       <PageCTA title={og?.ctaTitle || t.productPages.lvm.ctaTitle} description={og?.ctaDescription || t.productPages.lvm.ctaDesc}>
         <ButtonLink to={lp('/contact')} variant="primary" iconRight={<ArrowRight className="h-5 w-5" />}>

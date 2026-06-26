@@ -6,6 +6,7 @@ export { SwissMadeBadge } from './SwissMadeBadge';
 export { PageCTA } from './PageCTA';
 export { ButtonLink, TextLink } from './ButtonLink';
 export { FeatureCard } from './FeatureCard';
+export { CardImage } from './CardImage';
 export { ProductCard } from './ProductCard';
 export { ProductDetailLayout, type ProductPageData } from './ProductDetailLayout';
 export { CalloutCard } from './CalloutCard';

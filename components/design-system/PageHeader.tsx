@@ -8,7 +8,7 @@ import { cn } from '../ui/utils';
 
 type PageHeaderProps = {
   title: string;
-  description?: string;
+  description?: ReactNode;
   children?: ReactNode;
   className?: string;
 };

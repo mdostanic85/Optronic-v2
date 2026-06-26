@@ -42,7 +42,7 @@ export function DocumentationPage() {
           <div className="grid gap-4 md:grid-cols-2">
             {productDocs.map((doc) => (
               <Link key={doc.title} to={lp(doc.link)} className="group">
-                <Card className="h-full transition-all hover:border-op-primary hover:shadow-lg">
+                <Card className="h-full bg-white transition-all hover:border-op-primary hover:shadow-lg">
                   <CardContent className="flex items-start gap-4 p-6">
                     <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-op-primary-muted transition-colors group-hover:bg-op-primary/20">
                       <doc.icon className="h-5 w-5 text-op-primary" />

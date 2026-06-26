@@ -15,7 +15,7 @@ export function ProductDownloadsList({ downloads }: ProductDownloadsListProps) {
           href={download.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center justify-between rounded-xl border-2 border-op-border bg-op-surface-muted p-5 transition-all hover:border-op-primary/30 hover:bg-op-surface hover:shadow-lg"
+          className="group flex items-center justify-between rounded-xl border-2 border-op-border bg-white p-5 transition-all hover:border-op-primary/30 hover:shadow-lg"
         >
           <div className="flex min-w-0 flex-1 items-center gap-4">
             <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-op-primary-muted transition-colors group-hover:bg-op-primary/20">

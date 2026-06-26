@@ -132,13 +132,6 @@ export function LVMCPage() {
 
       <Section variant="muted" spacing="default">
         <Container>
-          <ProductSectionHeader badge={t.productPages.resourcesDownloads} title={t.productPages.lvmc.downloadsTitle} />
-          <ProductDownloadsList downloads={page.downloads} />
-        </Container>
-      </Section>
-
-      <Section variant="surface" spacing="default">
-        <Container>
           <ProductSectionHeader
             badge={t.productPages.featuresCapabilities}
             title={page.sections?.[0]?.heading ?? t.productPages.lvmc.featuresTitle}
@@ -148,8 +141,58 @@ export function LVMCPage() {
         </Container>
       </Section>
 
+      <Section variant="surface" spacing="default">
+        <Container>
+          <ProductSectionHeader badge={t.productPages.resourcesDownloads} title={t.productPages.lvmc.downloadsTitle} />
+          <ProductDownloadsList downloads={page.downloads} />
+        </Container>
+      </Section>
+
+      <Section variant="muted" spacing="default">
+        <Container>
+          <ProductSectionHeader
+            badge={t.productPages.productInAction}
+            title={t.productPages.lvmc.videoTitle}
+            description={t.productPages.lvmc.videoDesc}
+          />
+          <div className="mb-20">
+            <div className="relative mx-auto aspect-video max-w-5xl overflow-hidden rounded-2xl border-4 border-op-border bg-gray-900">
+              {isVideoPlaying ? (
+                <iframe
+                  className="h-full w-full"
+                  src={lvmcVideoEmbedUrl}
+                  title="LVMC YouTube Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setIsVideoPlaying(true)}
+                  className="group relative h-full w-full cursor-pointer"
+                  aria-label="Play LVMC video"
+                >
+                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/40 transition-colors group-hover:bg-black/30">
+                    <div className="text-center">
+                      <div className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-full bg-op-primary transition-all group-hover:scale-110 group-hover:bg-op-primary-hover">
+                        <Play className="ml-2 h-14 w-14 text-white" />
+                      </div>
+                      <p className="mb-3 text-3xl text-white">{t.productPages.lvmc.videoTitle}</p>
+                      <p className="mb-2 text-lg text-white/90">{t.productPages.lvmc.videoDesc}</p>
+                      <p className="text-white/70">{t.productPages.lvmc.videoSub}</p>
+                    </div>
+                  </div>
+                  <ImageWithFallback src={lvmcVideoThumbnail} alt="LVMC YouTube Video Thumbnail" className="h-full w-full object-cover" />
+                </button>
+              )}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       {modelsTable ? (
-        <Section variant="muted" spacing="default">
+        <Section variant="surface" spacing="default">
           <Container>
             <ProductSectionHeader
               badge={t.productPages.availableModels}
@@ -190,47 +233,13 @@ export function LVMCPage() {
         </Section>
       ) : null}
 
-      <Section variant="surface" spacing="default">
+      <Section variant="muted" spacing="default">
         <Container>
           <ProductSectionHeader
             badge={t.productPages.productInAction}
             title={t.productPages.lvmc.galleryTitle}
             description={t.productPages.lvmc.galleryDesc}
           />
-          <div className="mb-20">
-            <div className="relative mx-auto aspect-video max-w-5xl overflow-hidden rounded-2xl border-4 border-op-border bg-gray-900">
-              {isVideoPlaying ? (
-                <iframe
-                  className="h-full w-full"
-                  src={lvmcVideoEmbedUrl}
-                  title="LVMC YouTube Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsVideoPlaying(true)}
-                  className="group relative h-full w-full cursor-pointer"
-                  aria-label="Play LVMC video"
-                >
-                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/40 transition-colors group-hover:bg-black/30">
-                    <div className="text-center">
-                      <div className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-full bg-op-primary transition-all group-hover:scale-110 group-hover:bg-op-primary-hover">
-                        <Play className="ml-2 h-14 w-14 text-white" />
-                      </div>
-                      <p className="mb-3 text-3xl text-white">{t.productPages.lvmc.videoTitle}</p>
-                      <p className="mb-2 text-lg text-white/90">{t.productPages.lvmc.videoDesc}</p>
-                      <p className="text-white/70">{t.productPages.lvmc.videoSub}</p>
-                    </div>
-                  </div>
-                  <ImageWithFallback src={lvmcVideoThumbnail} alt="LVMC YouTube Video Thumbnail" className="h-full w-full object-cover" />
-                </button>
-              )}
-            </div>
-          </div>
-          <h3 className="mb-8 text-center text-2xl text-op-ink">{t.productPages.lvmc.galleryHeading}</h3>
           <Fancybox options={{ Thumbs: false }}>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
               {galleryImages.map((image) => (

@@ -29,6 +29,7 @@ import { DocumentationPage } from '@/views/DocumentationPage'
 import { FAQsPage } from '@/views/FAQsPage'
 import { SupportContactPage } from '@/views/SupportContactPage'
 import { SupportHintsPage } from '@/views/SupportHintsPage'
+import { SUPPORT_DETAIL_IDS } from '@/lib/supportConfig'
 
 const LOCALES = ['en', 'de']
 
@@ -103,7 +104,12 @@ export const routes: RouteRecord[] = [
           { path: 'faqs', element: <FAQsPage /> },
           { path: 'contact', element: <SupportContactPage /> },
           { path: 'hints', element: <SupportHintsPage /> },
-          { path: ':id', element: <SupportPage /> },
+          {
+            path: ':id',
+            element: <SupportPage />,
+            getStaticPaths: () =>
+              LOCALES.flatMap((l) => SUPPORT_DETAIL_IDS.map((id) => `/${l}/support/${id}`)),
+          },
         ],
       },
     ],

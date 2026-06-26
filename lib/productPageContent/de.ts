@@ -453,7 +453,7 @@ export const deProductPages: Record<string, ProductPageData> = {
     seoDescription:
       'CNC D500 modulare Mehrachsen-CNC-Steuerung auf CompactPCI-Basis mit Bedienstation E3000 für industrielle Echtzeitanwendungen.',
     title: 'CNC D500 / Bedienstation E3000',
-    subtitle: 'entwickelt für den jahrelangen fehlerfreien Einsatz im rauhen industriellen Umfeld',
+    subtitle: '<strong>entwickelt für den jahrelangen fehlerfreien Einsatz im rauhen industriellen Umfeld</strong>',
     downloads: [
       {
         label: 'Aufbau und Wartung der CNC D500',

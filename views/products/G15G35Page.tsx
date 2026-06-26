@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
-import { PageHeader, PageCTA, Section, Container, ButtonLink } from '../../components/design-system';
+import { CardImage, PageHeader, PageCTA, Section, Container, ButtonLink } from '../../components/design-system';
 import { ProductSectionHeader } from '../../components/design-system/product-page/ProductSectionHeader';
 import { ProductBulletList } from '../../components/design-system/product-page/ProductBulletList';
 import { ProductDownloadsList } from '../../components/design-system/product-page/ProductDownloadsList';
@@ -10,15 +9,13 @@ import { getProductPageData } from '../../lib/productPageContent';
 import { SEO } from '../../src/components/SEO';
 
 const g15G35SectionImages = [
-  'https://www.optronic.ch/wp-content/uploads/2022/02/g35_small-1024x429.jpg',
   'https://www.optronic.ch/wp-content/uploads/2020/09/G15-_-G35-1024x640.jpg',
+  'https://www.optronic.ch/wp-content/uploads/2022/02/g35_small-1024x429.jpg',
 ] as const;
 
 function ProductImageFrame({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="aspect-[4/3] w-full max-w-xl overflow-hidden rounded-xl border-4 border-gray-100 bg-white p-2">
-      <ImageWithFallback src={src} alt={alt} className="h-full w-full scale-110 object-contain" />
-    </div>
+    <CardImage src={src} alt={alt} className="w-full rounded-xl border-4 border-gray-100" />
   );
 }
 
@@ -29,6 +26,7 @@ export function G15G35Page() {
 
   const featureSections = page.sections ?? [];
   const tables = page.tables ?? [];
+  const sectionVariant = (index: number) => (index % 2 === 0 ? 'surface' : 'muted') as const;
 
   return (
     <div className="bg-op-surface">
@@ -63,7 +61,7 @@ export function G15G35Page() {
       {featureSections.map((section, index) => {
         const sectionImage = g15G35SectionImages[index];
         return (
-          <Section key={section.heading} variant={index % 2 === 0 ? 'muted' : 'surface'} spacing="default">
+          <Section key={section.heading} variant={sectionVariant(1 + index)} spacing="default">
             <Container>
               <div className="grid items-start gap-10 md:grid-cols-2 md:gap-16">
                 <div>
@@ -71,7 +69,7 @@ export function G15G35Page() {
                   <ProductBulletList items={section.items ?? []} align="start" />
                 </div>
                 {sectionImage ? (
-                  <div className="flex items-center justify-center md:justify-end">
+                  <div className="w-full max-w-xl md:ml-auto">
                     <ProductImageFrame src={sectionImage} alt={section.heading} />
                   </div>
                 ) : null}
@@ -81,10 +79,21 @@ export function G15G35Page() {
         );
       })}
 
+      <Section variant={sectionVariant(1 + featureSections.length)} spacing="default">
+        <Container>
+          <ProductSectionHeader
+            badge={g15g35?.downloadsSectionBadge || t.productPages.resourcesDownloads}
+            title={g15g35?.downloadsHeading || t.productPages.lvm.downloadsTitle}
+            description={g15g35?.downloadsDescription}
+          />
+          <ProductDownloadsList downloads={page.downloads} />
+        </Container>
+      </Section>
+
       {tables.map((table, index) => (
         <Section
           key={table.heading}
-          variant={(featureSections.length + index) % 2 === 0 ? 'muted' : 'surface'}
+          variant={sectionVariant(2 + featureSections.length + index)}
           spacing="default"
         >
           <Container>
@@ -122,17 +131,6 @@ export function G15G35Page() {
           </Container>
         </Section>
       ))}
-
-      <Section variant="muted" spacing="default">
-        <Container>
-          <ProductSectionHeader
-            badge={g15g35?.downloadsSectionBadge || t.productPages.resourcesDownloads}
-            title={g15g35?.downloadsHeading || t.productPages.lvm.downloadsTitle}
-            description={g15g35?.downloadsDescription}
-          />
-          <ProductDownloadsList downloads={page.downloads} />
-        </Container>
-      </Section>
 
       <PageCTA
         title={g15g35?.ctaTitle || t.productPages.lvm.ctaTitle}

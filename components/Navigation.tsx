@@ -2,8 +2,16 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { getSupportNavItems } from '../lib/supportConfig'
 
 const logoImage = '/assets/logo.webp'
+
+type SupportNavLink = { path: string; label: string }
+
+type NavItem =
+  | { path: string; label: string }
+  | { label: string; productDropdown: true }
+  | { label: string; path: string; supportDropdown: SupportNavLink[] }
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,28 +24,13 @@ export function Navigation() {
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const lp = (path: string) => `/${locale}${path}`
+  const supportNavItems = getSupportNavItems(t)
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { path: '/', label: t.nav.home },
     { path: '/about', label: t.nav.about },
-    {
-      label: t.nav.products,
-      dropdown: [
-        { path: '/products', label: t.nav.products },
-        { path: '/products/control-systems', label: t.nav.controlSystems },
-        { path: '/products/sensors', label: t.nav.sensors },
-        { path: '/products/lvmc', label: 'LVMC' },
-        { path: '/products/lvm', label: 'LV..M' },
-        { path: '/products/g15-g35', label: 'G15 / G35' },
-        { path: '/products/og', label: 'OG23D / OG28D' },
-        { path: '/products/irv-irt', label: 'IRV / IRT' },
-        { path: '/products/igv', label: 'IGV' },
-        { path: '/products/d500-e3000', label: 'CNC D500 / E3000' },
-        { path: '/products/oaglinux', label: 'OAGLinux' },
-        { path: '/products/d571', label: 'CNC D571' },
-      ],
-    },
-    { path: '/support', label: t.nav.support },
+    { label: t.nav.products, productDropdown: true },
+    { label: t.nav.support, path: '/support', supportDropdown: supportNavItems },
     { path: '/support/downloads', label: t.nav.downloads },
     { path: '/contact', label: t.nav.contact },
   ]
@@ -70,6 +63,20 @@ export function Navigation() {
 
   const isActive = (path: string) => pathname === lp(path)
   const isDropdownActive = (paths: string[]) => paths.some((path) => isActive(path))
+  const isSupportDropdownActive = () =>
+    supportNavItems.some((item) => isActive(item.path)) ||
+    (pathname.startsWith(`${lp('/support')}/`) &&
+      !isActive('/support/downloads') &&
+      !isActive('/support/documentation') &&
+      !isActive('/support/faqs') &&
+      !isActive('/support/contact'))
+
+  const hasProductDropdown = (item: NavItem): item is { label: string; productDropdown: true } =>
+    'productDropdown' in item && item.productDropdown === true
+
+  const hasSupportDropdown = (
+    item: NavItem,
+  ): item is { label: string; path: string; supportDropdown: SupportNavLink[] } => 'supportDropdown' in item
 
   useEffect(() => {
     setOpenDropdown(null)
@@ -104,16 +111,15 @@ export function Navigation() {
             <img src={logoImage} alt="OPTRONIC" className="h-[1.575rem] w-auto" width="242" height="25" />
           </Link>
 
-          {/* Desktop */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <div
                 key={item.label}
                 className="relative"
-                onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
-                onMouseLeave={() => item.dropdown && handleMouseLeave()}
+                onMouseEnter={() => (hasProductDropdown(item) || hasSupportDropdown(item)) && handleMouseEnter(item.label)}
+                onMouseLeave={() => (hasProductDropdown(item) || hasSupportDropdown(item)) && handleMouseLeave()}
               >
-                {item.dropdown ? (
+                {hasProductDropdown(item) ? (
                   <>
                     <button
                       type="button"
@@ -122,7 +128,7 @@ export function Navigation() {
                         ;(e.currentTarget as HTMLButtonElement).blur()
                       }}
                       className={`px-3.5 py-2 rounded-lg transition-all duration-200 flex items-center gap-1.5 text-xs font-medium ${
-                        openDropdown === item.label || isDropdownActive(item.dropdown.map((sub) => sub.path))
+                        openDropdown === item.label || isDropdownActive(productMenuSections.map((section) => section.path))
                           ? 'text-op-primary bg-op-primary-muted'
                           : 'text-op-body-strong hover:text-op-ink hover:bg-slate-50'
                       }`}
@@ -172,11 +178,44 @@ export function Navigation() {
                       </div>
                     )}
                   </>
+                ) : hasSupportDropdown(item) ? (
+                  <>
+                    <Link
+                      to={lp(item.path)}
+                      className={`px-3.5 py-2 rounded-lg transition-all duration-200 flex items-center gap-1.5 text-xs font-medium ${
+                        openDropdown === item.label || isSupportDropdownActive()
+                          ? 'text-op-primary bg-op-primary-muted'
+                          : 'text-op-body-strong hover:text-op-ink hover:bg-slate-50'
+                      }`}
+                    >
+                      {item.label}
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === item.label ? 'rotate-180' : ''}`} />
+                    </Link>
+                    {openDropdown === item.label && (
+                      <div className="absolute top-full left-0 pt-2 z-50">
+                        <div className="w-[22rem] max-w-[calc(100vw-2rem)] rounded-xl bg-white shadow-[0_8px_30px_rgba(15,23,42,0.12)] border border-slate-100 p-2">
+                          <div className="space-y-1">
+                            {item.supportDropdown.map((sub) => (
+                              <Link
+                                key={sub.path}
+                                to={lp(sub.path)}
+                                className={`block px-3.5 py-2.5 rounded-lg text-xs transition-all duration-150 ${
+                                  isActive(sub.path) ? 'bg-op-primary-muted text-op-primary font-medium' : 'text-op-body-strong hover:bg-slate-50 hover:text-op-ink'
+                                }`}
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <Link
-                    to={lp(item.path!)}
+                    to={lp(item.path)}
                     className={`px-3.5 py-2 rounded-lg transition-all duration-200 text-xs font-medium ${
-                      isActive(item.path!) ? 'text-op-primary bg-op-primary-muted' : 'text-op-body-strong hover:text-op-ink hover:bg-slate-50'
+                      isActive(item.path) ? 'text-op-primary bg-op-primary-muted' : 'text-op-body-strong hover:text-op-ink hover:bg-slate-50'
                     }`}
                   >
                     {item.label}
@@ -207,20 +246,18 @@ export function Navigation() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2 rounded-lg hover:bg-slate-50 transition-colors" aria-label={isOpen ? 'Close menu' : 'Open menu'}>
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile */}
       {isOpen && (
         <div className="lg:hidden border-t border-slate-100 bg-white">
           <div className="px-4 pt-2 pb-4 space-y-0.5 max-h-[70vh] overflow-y-auto">
             {navItems.map((item) => (
               <div key={item.label}>
-                {item.dropdown ? (
+                {hasProductDropdown(item) ? (
                   <>
                     <button
                       onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
@@ -251,29 +288,56 @@ export function Navigation() {
                                 <ChevronDown className={`w-4 h-4 transition-transform ${openMobileProductSection === section.id ? 'rotate-180' : ''}`} />
                               </button>
                             </div>
-                            {openMobileProductSection === section.id && section.links.map((sub) => (
-                              <Link
-                                key={sub.path}
-                                to={lp(sub.path)}
-                                onClick={() => setIsOpen(false)}
-                                className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
-                                  isActive(sub.path) ? 'bg-op-primary-muted text-op-primary font-medium' : 'text-op-body hover:bg-slate-50'
-                                }`}
-                              >
-                                {sub.label}
-                              </Link>
-                            ))}
+                            {openMobileProductSection === section.id &&
+                              section.links.map((sub) => (
+                                <Link
+                                  key={sub.path}
+                                  to={lp(sub.path)}
+                                  onClick={() => setIsOpen(false)}
+                                  className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                                    isActive(sub.path) ? 'bg-op-primary-muted text-op-primary font-medium' : 'text-op-body hover:bg-slate-50'
+                                  }`}
+                                >
+                                  {sub.label}
+                                </Link>
+                              ))}
                           </div>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : hasSupportDropdown(item) ? (
+                  <>
+                    <button
+                      onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                      className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-op-body-strong hover:bg-slate-50 font-medium transition-colors"
+                    >
+                      {item.label}
+                      <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`} />
+                    </button>
+                    {openDropdown === item.label && (
+                      <div className="ml-4 mt-0.5 space-y-0.5">
+                        {item.supportDropdown.map((sub) => (
+                          <Link
+                            key={sub.path}
+                            to={lp(sub.path)}
+                            onClick={() => setIsOpen(false)}
+                            className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                              isActive(sub.path) ? 'bg-op-primary-muted text-op-primary font-medium' : 'text-op-body hover:bg-slate-50'
+                            }`}
+                          >
+                            {sub.label}
+                          </Link>
                         ))}
                       </div>
                     )}
                   </>
                 ) : (
                   <Link
-                    to={lp(item.path!)}
+                    to={lp(item.path)}
                     onClick={() => setIsOpen(false)}
                     className={`block px-3 py-2.5 rounded-lg transition-colors font-medium ${
-                      isActive(item.path!) ? 'bg-op-primary-muted text-op-primary' : 'text-op-body-strong hover:bg-slate-50'
+                      isActive(item.path) ? 'bg-op-primary-muted text-op-primary' : 'text-op-body-strong hover:bg-slate-50'
                     }`}
                   >
                     {item.label}

@@ -33,6 +33,12 @@ const staticRoutes = [
   '/support/faqs',
   '/support/contact',
   '/support/hints',
+  '/support/omc300',
+  '/support/cnc-obsolete',
+  '/support/component-lists',
+  '/support/fsu200',
+  '/support/lv-obsolete',
+  '/support/og-obsolete',
 ]
 
 const now = new Date().toISOString()

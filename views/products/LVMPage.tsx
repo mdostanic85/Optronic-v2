@@ -125,8 +125,19 @@ export function LVMPage() {
         </Container>
       </Section>
 
+      <Section variant="surface" spacing="default">
+        <Container>
+          <ProductSectionHeader
+            badge={t.productPages.resourcesDownloads}
+            title={t.productPages.lvm.downloadsTitle}
+            description={t.productPages.lvm.downloadsDesc}
+          />
+          <ProductDownloadsList downloads={page.downloads} />
+        </Container>
+      </Section>
+
       {modelsTable ? (
-        <Section variant="surface" spacing="default">
+        <Section variant="muted" spacing="default">
           <Container>
             <ProductSectionHeader
               badge={t.productPages.availableModels}
@@ -166,17 +177,6 @@ export function LVMPage() {
           </Container>
         </Section>
       ) : null}
-
-      <Section variant="surface" spacing="default">
-        <Container>
-          <ProductSectionHeader
-            badge={t.productPages.resourcesDownloads}
-            title={t.productPages.lvm.downloadsTitle}
-            description={t.productPages.lvm.downloadsDesc}
-          />
-          <ProductDownloadsList downloads={page.downloads} />
-        </Container>
-      </Section>
 
       <PageCTA title={t.productPages.lvm.ctaTitle} description={t.productPages.lvm.ctaDesc}>
         <ButtonLink to={lp('/contact')} variant="primary" iconRight={<ArrowRight className="h-5 w-5" />}>

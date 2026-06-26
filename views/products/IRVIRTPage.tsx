@@ -36,6 +36,7 @@ export function IRVIRTPage() {
 
   const featureSections = page.sections ?? [];
   const modelsTable = page.tables?.[0];
+  const sectionVariant = (index: number) => (index % 2 === 0 ? 'surface' : 'muted') as const;
 
   return (
     <div className="bg-op-surface">
@@ -124,7 +125,7 @@ export function IRVIRTPage() {
       </Section>
 
       {featureSections.map((section, index) => (
-        <Section key={section.heading} variant={index % 2 === 0 ? 'muted' : 'surface'} spacing="default">
+        <Section key={section.heading} variant={sectionVariant(1 + index)} spacing="default">
           <Container>
             <ProductSectionHeader
               badge={
@@ -140,8 +141,19 @@ export function IRVIRTPage() {
         </Section>
       ))}
 
+      <Section variant={sectionVariant(1 + featureSections.length)} spacing="default">
+        <Container>
+          <ProductSectionHeader
+            badge={irvirt?.downloadsSectionBadge || t.productPages.resourcesDownloads}
+            title={irvirt?.downloadsHeading || t.productPages.lvm.downloadsTitle}
+            description={irvirt?.downloadsDescription}
+          />
+          <ProductDownloadsList downloads={page.downloads} />
+        </Container>
+      </Section>
+
       {modelsTable ? (
-        <Section variant="muted" spacing="default">
+        <Section variant={sectionVariant(2 + featureSections.length)} spacing="default">
           <Container>
             <ProductSectionHeader
               badge={irvirt?.modelsSectionBadge || t.productPages.availableModels}
@@ -178,17 +190,6 @@ export function IRVIRTPage() {
           </Container>
         </Section>
       ) : null}
-
-      <Section variant="surface" spacing="default">
-        <Container>
-          <ProductSectionHeader
-            badge={irvirt?.downloadsSectionBadge || t.productPages.resourcesDownloads}
-            title={irvirt?.downloadsHeading || t.productPages.lvm.downloadsTitle}
-            description={irvirt?.downloadsDescription}
-          />
-          <ProductDownloadsList downloads={page.downloads} />
-        </Container>
-      </Section>
 
       <PageCTA
         title={irvirt?.ctaTitle || t.productPages.lvm.ctaTitle}

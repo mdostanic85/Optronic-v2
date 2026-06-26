@@ -20,13 +20,9 @@ export function SupportHintsPage() {
   const hints = sd.importantHints;
 
   return (
-    <div>
+    <div className="bg-op-surface">
       <SEO title="Important Hints for Support Requests" description="Device identification information required for OPTRONIC support requests — type plates, labels, article numbers, and serial numbers." />
-      <PageHeader
-        title={hints.heading}
-        description={hints.p1}
-        className="[&_p]:whitespace-pre-line"
-      >
+      <PageHeader title={hints.heading}>
         <div className="mt-6">
           <Link
             to={`/${locale}/support`}
@@ -40,35 +36,34 @@ export function SupportHintsPage() {
 
       <Section variant="surface" spacing="default">
         <Container>
-          <div className="mx-auto max-w-3xl space-y-12">
+          <div className="space-y-10">
+            <p className="whitespace-pre-line text-lg leading-relaxed text-op-body">{hints.p1}</p>
 
-            {/* Main instruction callout */}
             <div className="flex gap-4 rounded-xl border-2 border-op-primary bg-op-primary-muted p-6">
               <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-op-primary" />
               <p className="text-base text-op-ink">{hints.p2}</p>
             </div>
 
-            {/* Label types — card layout with live-site copy and photos */}
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2">
               {hints.labels.map((label, i) => (
                 <div
                   key={label.title}
-                  className="overflow-hidden rounded-xl border border-op-border bg-white shadow-sm"
+                  className="flex h-full flex-col overflow-hidden rounded-xl border border-op-border bg-white shadow-sm"
                 >
-                  <div className="border-b border-op-border bg-op-surface-muted p-4">
+                  <div className="flex h-44 shrink-0 items-center justify-center border-b border-op-border bg-op-surface-muted p-4">
                     <ImageWithFallback
                       src={labelImages[i]}
                       alt={label.imageAlt}
-                      className="mx-auto h-auto max-h-40 w-full object-contain"
+                      className="max-h-full max-w-full object-contain"
                       loading="lazy"
                       decoding="async"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="mb-4 text-lg font-medium text-op-ink">{label.title}</h3>
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="mb-3 text-lg font-medium text-op-ink">{label.title}</h3>
                     <ul className="space-y-2">
                       {label.examples.map((ex) => (
-                        <li key={ex} className="text-sm text-op-body leading-relaxed">
+                        <li key={ex} className="text-sm leading-relaxed text-op-body">
                           {ex}
                         </li>
                       ))}
@@ -78,11 +73,9 @@ export function SupportHintsPage() {
               ))}
             </div>
 
-            {/* Journal note */}
             <div className="rounded-xl bg-op-surface-muted p-6">
-              <p className="whitespace-pre-line text-sm text-op-body leading-relaxed">{hints.journalNote}</p>
+              <p className="whitespace-pre-line text-sm leading-relaxed text-op-body">{hints.journalNote}</p>
             </div>
-
           </div>
         </Container>
       </Section>

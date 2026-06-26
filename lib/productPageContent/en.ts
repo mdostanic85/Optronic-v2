@@ -444,7 +444,7 @@ export const enProductPages: Record<string, ProductPageData> = {
     seoDescription:
       'CNC D500 modular multi-axis controller on CompactPCI basis with E3000 operating station for industrial real-time applications.',
     title: 'CNC D500 / Operating Station E3000',
-    subtitle: 'Designed for Years of Error-Free Use in Harsh Industrial Environments',
+    subtitle: '<strong>Designed for Years of Error-Free Use in Harsh Industrial Environments</strong>',
     downloads: [
       {
         label: 'Assembly and Maintenance of the CNC D500',

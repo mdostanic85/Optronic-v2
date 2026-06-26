@@ -11,6 +11,7 @@ import { getProductPageData } from '../../lib/productPageContent';
 import { SEO } from '../../src/components/SEO';
 
 const igvImage = '/assets/igv.webp';
+const igvDiagramImage = '/assets/igv-diagram.png';
 
 export function IGVPage() {
   const { t, locale, lp } = useLanguage();
@@ -70,19 +71,29 @@ export function IGVPage() {
         </Container>
       </Section>
 
+      <Section variant="surface" spacing="default">
+        <Container>
+          <ProductSectionHeader
+            badge={t.productPages.resourcesDownloads}
+            title={t.productPages.igv?.downloadsHeading || t.productPages.lvm.downloadsTitle}
+          />
+          <ProductDownloadsList downloads={page.downloads} />
+        </Container>
+      </Section>
+
       {modelsTable ? (
-        <Section variant="surface" spacing="default">
+        <Section variant="muted" spacing="default">
           <Container>
             <ProductSectionHeader
               badge={t.productPages.igv?.modelsSpecsBadge || t.productPages.availableModels}
               title={modelsTable.heading}
             />
-            <div className="overflow-x-auto rounded-xl border border-op-border shadow-lg">
-              <table className="w-full min-w-[960px] border-collapse bg-op-surface">
+            <div className="overflow-hidden rounded-xl border border-op-border shadow-lg">
+              <table className="w-full border-collapse bg-op-surface text-sm">
                 <thead className="bg-op-gradient-hero text-op-on-dark">
                   <tr>
                     {modelsTable.headers.map((header) => (
-                      <th key={header} className="px-6 py-4 text-left">
+                      <th key={header} className="break-words px-4 py-3 text-left">
                         {header}
                       </th>
                     ))}
@@ -94,7 +105,7 @@ export function IGVPage() {
                       {row.map((cell, cellIndex) => (
                         <td
                           key={`${row[0]}-${cellIndex}`}
-                          className={`whitespace-pre-line px-6 py-4 ${cellIndex === 0 ? 'text-op-ink' : 'text-op-body'}`}
+                          className={`break-words whitespace-pre-line px-4 py-3 ${cellIndex === 0 ? 'text-op-ink' : 'text-op-body'}`}
                         >
                           {cell}
                         </td>
@@ -103,6 +114,13 @@ export function IGVPage() {
                   ))}
                 </tbody>
               </table>
+            </div>
+            <div className="mt-10 flex justify-center">
+              <ImageWithFallback
+                src={igvDiagramImage}
+                alt={t.productPages.igv?.diagramAlt || 'IGV signal distribution diagram'}
+                className="h-auto w-full max-w-sm object-contain"
+              />
             </div>
             <div className="mt-10 rounded-xl bg-op-surface-muted p-8 text-center">
               <p className="mb-4 text-lg text-op-body">{t.productPages.customConfigDesc}</p>
@@ -113,16 +131,6 @@ export function IGVPage() {
           </Container>
         </Section>
       ) : null}
-
-      <Section variant="muted" spacing="default">
-        <Container>
-          <ProductSectionHeader
-            badge={t.productPages.resourcesDownloads}
-            title={t.productPages.igv?.downloadsHeading || t.productPages.lvm.downloadsTitle}
-          />
-          <ProductDownloadsList downloads={page.downloads} />
-        </Container>
-      </Section>
 
       <PageCTA
         title={t.productPages.igv?.ctaTitle || t.productPages.lvm.ctaTitle}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Download } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
-import { PageHeader, PageCTA, Section, Container, ButtonLink } from '../components/design-system';
+import { CardImage, PageHeader, PageCTA, Section, Container, ButtonLink } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
 import { SEO } from '../src/components/SEO';
 
@@ -42,13 +42,7 @@ export function SensorsPage() {
           <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
             {sensors.map((sensor) => (
               <Card key={sensor.id} className="group flex h-full flex-col gap-0 overflow-hidden border-2 transition-all hover:border-op-primary hover:shadow-xl">
-                <div className="flex aspect-[4/3] shrink-0 items-center justify-center bg-white p-6">
-                  <img
-                    src={sensor.image}
-                    alt={sensor.name}
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
+                <CardImage src={sensor.image} alt={sensor.name} />
                 <CardContent className="flex flex-1 flex-col p-6">
                   <div className="mb-2 shrink-0 text-sm text-op-primary">{sensor.name}</div>
                   <div className="flex flex-1 flex-col">
