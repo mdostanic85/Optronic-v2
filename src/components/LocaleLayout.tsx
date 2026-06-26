@@ -4,6 +4,7 @@ import { WireframeProvider } from '@/contexts/WireframeContext'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { ScrollToTop } from '@/components/ScrollToTop'
+import { ClientFeedbackWidget } from '@/components/ClientFeedbackWidget'
 
 const VALID_LOCALES = ['en', 'de']
 
@@ -25,6 +26,7 @@ export function LocaleLayout() {
           </main>
           <Footer />
         </div>
+        <ClientFeedbackWidget />
       </WireframeProvider>
     </LanguageProvider>
   )
