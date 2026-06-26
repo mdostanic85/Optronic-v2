@@ -384,6 +384,7 @@ const en = {
       tableOutput2: 'Output 2 (X4)',
       tableOutput3: 'Output 3 (X5)',
       downloadsHeading: 'Technical Documentation',
+      diagramAlt: 'IGV signal distribution diagram',
       ctaTitle: 'Need Help with Encoder Signal Distribution?',
       ctaDesc: 'Contact our team for integration support.',
     },

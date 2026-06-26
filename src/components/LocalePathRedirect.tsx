@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom'
 import { detectLocale } from './RootLocaleRedirect'
-import { localePath } from '@/lib/localePath'
+import { localePath } from '../../lib/localePath'
 
 /** Redirects bare paths (e.g. /products/lvmc) to the locale-prefixed route. */
 export function LocalePathRedirect() {

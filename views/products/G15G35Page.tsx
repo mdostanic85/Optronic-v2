@@ -26,7 +26,7 @@ export function G15G35Page() {
 
   const featureSections = page.sections ?? [];
   const tables = page.tables ?? [];
-  const sectionVariant = (index: number) => (index % 2 === 0 ? 'surface' : 'muted') as const;
+  const sectionVariant = (index: number): 'surface' | 'muted' => (index % 2 === 0 ? 'surface' : 'muted');
 
   return (
     <div className="bg-op-surface">

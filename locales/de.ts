@@ -384,6 +384,7 @@ const de = {
       tableOutput2: 'Ausgang 2 (X4)',
       tableOutput3: 'Ausgang 3 (X5)',
       downloadsHeading: 'Technische Dokumentation',
+      diagramAlt: 'IGV Signaldiagramm',
       ctaTitle: 'Hilfe bei der Gebersignal-Verteilung?',
       ctaDesc: 'Kontaktieren Sie unser Team für Integrationsunterstützung.',
     },
