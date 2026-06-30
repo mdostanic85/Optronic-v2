@@ -202,7 +202,6 @@ const de = {
       'Schnelle Antwortzeit — in der Regel innerhalb von 24 Stunden',
       'Kompetente technische Beratung verfügbar',
       'Kostenlose Angebote für kundenspezifische Projekte',
-      'Mehrsprachiger Support verfügbar',
     ],
     ctaTitle: 'Dringender Support benötigt?',
     ctaDesc: 'Für technischen Notfall-Support ist unsere 24/7-Hotline jederzeit erreichbar.',
