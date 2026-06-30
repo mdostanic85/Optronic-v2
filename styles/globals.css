@@ -24,6 +24,28 @@
   src: url('/fonts/plus-jakarta-sans-latin.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-sans-latin-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-sans-latin-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-sans-latin-600.woff2') format('woff2');
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -197,7 +219,11 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--op-font-sans);
+    font-family: var(--op-font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--op-font-display);
   }
 }
 
@@ -233,7 +259,9 @@
     p {
       font-size: var(--text-base);
       font-weight: var(--font-weight-normal);
-      line-height: 1.5;
+      line-height: var(--op-leading-relaxed);
+      letter-spacing: var(--op-tracking-body);
+      word-spacing: var(--op-word-spacing-body);
     }
 
     label {
@@ -296,6 +324,23 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .font-op-display {
+    font-family: var(--op-font-display);
+  }
+
+  .font-op-body {
+    font-family: var(--op-font-body);
+  }
+
+  /* Body copy: readable tracking, word spacing + line height on prose blocks */
+  :where(p, li, div).text-op-body,
+  :where(p, li, div).text-op-body-strong {
+    font-family: var(--op-font-body);
+    letter-spacing: var(--op-tracking-body);
+    word-spacing: var(--op-word-spacing-body);
+    line-height: var(--op-leading-relaxed);
   }
 }
 

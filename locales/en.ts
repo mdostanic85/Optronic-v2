@@ -11,7 +11,6 @@ const en = {
     support: 'Support',
     contact: 'Contact',
     downloads: 'Downloads',
-    privacy: 'Privacy',
   },
 
   // ── Home page ──

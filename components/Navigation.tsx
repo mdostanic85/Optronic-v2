@@ -32,7 +32,6 @@ export function Navigation() {
     { label: t.nav.products, productDropdown: true },
     { label: t.nav.support, path: '/support', supportDropdown: supportNavItems },
     { path: '/support/downloads', label: t.nav.downloads },
-    { path: '/privacy', label: t.nav.privacy },
     { path: '/contact', label: t.nav.contact },
   ]
 
@@ -105,7 +104,7 @@ export function Navigation() {
   }, [])
 
   return (
-    <nav className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-[0_1px_0_rgba(15,23,42,0.06)]' : ''}`}>
+    <nav className={`font-op-display sticky top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? 'shadow-[0_1px_0_rgba(15,23,42,0.06)]' : ''}`}>
       <div className="mx-auto max-w-op-container px-op-gutter">
         <div className="flex h-16 items-center justify-between">
           <Link to={lp('/')} className="flex items-center">

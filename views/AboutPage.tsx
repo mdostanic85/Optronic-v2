@@ -31,7 +31,7 @@ export function AboutPage() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div>
               <h2 className="mb-6 text-3xl font-normal text-op-ink md:text-4xl">{t.about.ourStory}</h2>
-              <div className="space-y-4 text-base leading-6 tracking-[-0.31px] text-op-body">
+              <div className="space-y-4 text-base leading-relaxed text-op-body">
                 <p>{renderCopyWithBold(t.about.storyParagraphs[0])}</p>
                 <p>{t.about.storyParagraphs[1]}</p>
                 <p>{t.about.storyParagraphs[2]}</p>

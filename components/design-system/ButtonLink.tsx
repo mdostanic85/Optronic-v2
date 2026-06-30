@@ -9,7 +9,7 @@ import { cn } from '../ui/utils';
 type ButtonVariant = 'primary' | 'ghostOnDark' | 'outlineLight' | 'outlineNeutral';
 
 const variantBase =
-  'inline-flex items-center justify-center gap-2 text-sm font-medium leading-5 tracking-[-0.15px] h-10 rounded-lg transition-colors';
+  'font-op-display inline-flex items-center justify-center gap-2 text-sm font-medium leading-5 tracking-[-0.15px] h-10 rounded-lg transition-colors';
 
 const variants: Record<ButtonVariant, string> = {
   primary: 'bg-op-secondary text-op-on-dark hover:bg-op-secondary-hover',

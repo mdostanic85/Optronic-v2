@@ -253,7 +253,7 @@ export function HomePage() {
                 <h2 className="mb-6 text-4xl font-normal leading-10 tracking-[0.37px] text-op-ink transition-colors group-hover:text-op-primary">
                   {t.home.flagshipTitle}
                 </h2>
-                <p className="mb-8 text-lg leading-7 tracking-[-0.44px] text-op-body">
+                <p className="mb-8 text-lg leading-relaxed text-op-body">
                   {t.home.flagshipDesc}
                 </p>
 
@@ -263,7 +263,7 @@ export function HomePage() {
                       <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-op-primary" />
                       <div>
                         <h3 className="mb-1 text-base font-medium leading-6 tracking-[-0.31px] text-op-ink">{f.title}</h3>
-                        <p className="text-base leading-6 tracking-[-0.31px] text-op-body">{f.desc}</p>
+                        <p className="text-base leading-relaxed text-op-body">{f.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -365,7 +365,7 @@ export function HomePage() {
               <h2 className="mb-6 text-4xl font-normal leading-10 tracking-[0.37px] text-op-ink">
                 {t.home.supportLegacyTitle}
               </h2>
-              <p className="mb-6 text-lg leading-[29px] tracking-[-0.44px] text-op-body-strong">
+              <p className="mb-6 text-lg leading-relaxed text-op-body-strong">
                 {t.home.supportLegacyDesc}
               </p>
 
@@ -379,7 +379,7 @@ export function HomePage() {
                       </div>
                       <div>
                         <h3 className="mb-1 text-lg font-medium leading-[27px] tracking-[-0.44px] text-op-ink">{item.title}</h3>
-                        <p className="text-base leading-6 tracking-[-0.31px] text-op-body">{item.desc}</p>
+                        <p className="text-base leading-relaxed text-op-body">{item.desc}</p>
                       </div>
                     </div>
                   );

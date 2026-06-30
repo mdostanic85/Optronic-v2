@@ -11,7 +11,6 @@ const de = {
     support: 'Support',
     contact: 'Kontakt',
     downloads: 'Downloads',
-    privacy: 'Datenschutzerklärung',
   },
 
   // ── Home page ──
