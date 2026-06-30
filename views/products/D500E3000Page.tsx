@@ -51,35 +51,8 @@ export function D500E3000Page() {
         </div>
       </PageHeader>
 
-      <Section variant="surface" spacing="default">
-        <Container>
-          <div className="grid items-center gap-16 md:grid-cols-2">
-            <div>
-              <div className="mb-4 inline-block rounded-full bg-op-primary-muted px-4 py-1 text-sm text-op-primary">
-                {d500?.controlSystemBadge || t.productPages.premiumSensor}
-              </div>
-              <h2 className="mb-6 text-3xl text-op-ink md:text-4xl">
-                {d500?.productOverview || t.productPages.lvm.overviewTitle}
-              </h2>
-              <p className="text-lg leading-relaxed text-op-body">
-                {d500?.overviewBody || page.seoDescription}
-              </p>
-            </div>
-            <div>
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-xl border-4 border-gray-100 bg-white">
-                <ImageWithFallback
-                  src={coverImage}
-                  alt={d500?.imageAlt || page.title}
-                  className="h-full w-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
       {d500Block ? (
-        <Section variant={sectionVariant(1)} spacing="default">
+        <Section variant="surface" spacing="default">
           <Container>
             <div className="grid items-start gap-10 md:grid-cols-2 md:gap-16">
               <div>
@@ -91,6 +64,13 @@ export function D500E3000Page() {
                 <ProductBulletList items={d500Block.items ?? []} align="start" />
               </div>
               <div className="grid w-full max-w-xl gap-4 md:ml-auto">
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-xl border-4 border-gray-100 bg-white">
+                  <ImageWithFallback
+                    src={coverImage}
+                    alt={d500?.imageAlt || page.title}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
                 {d500SectionImages.map((src) => (
                   <ProductImageFrame key={src} src={src} alt={d500Block.heading} />
                 ))}

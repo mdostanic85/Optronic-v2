@@ -5,7 +5,6 @@ import { Card, CardContent } from '../components/ui/card';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { PageHeader, Section, Container } from '../components/design-system';
 import { useLanguage } from '../contexts/LanguageContext';
-import { renderCopyWithBold } from '../lib/renderCopyWithBold';
 import { SEO } from '../src/components/SEO';
 
 export function AboutPage() {
@@ -32,7 +31,7 @@ export function AboutPage() {
             <div>
               <h2 className="mb-6 text-3xl font-normal text-op-ink md:text-4xl">{t.about.ourStory}</h2>
               <div className="space-y-4 text-base leading-relaxed text-op-body">
-                <p>{renderCopyWithBold(t.about.storyParagraphs[0])}</p>
+                <p>{t.about.storyParagraphs[0]}</p>
                 <p>{t.about.storyParagraphs[1]}</p>
                 <p>{t.about.storyParagraphs[2]}</p>
               </div>

@@ -83,22 +83,22 @@ export function HomePage() {
   const controlSystemsProducts = [
     {
       id: 'd500-e3000',
-      name: 'CNC D500 / E3000',
-      description: `${t.controlSystems.items[0].title} - ${t.controlSystems.items[0].description}`,
+      name: 'CNC D500',
+      description: t.controlSystems.items[0].description,
       image: e3000Image,
       link: '/products/d500-e3000',
     },
     {
       id: 'oag-linux',
       name: 'OAG Linux',
-      description: `${t.controlSystems.items[1].title} - ${t.controlSystems.items[1].description}`,
+      description: t.controlSystems.items[1].description,
       image: oagLinuxImage,
       link: '/products/oaglinux',
     },
     {
-      id: 'cnc-d371',
-      name: 'CNC D371',
-      description: `${t.controlSystems.items[2].title} - ${t.controlSystems.items[2].description}`,
+      id: 'cnc-d571',
+      name: 'CNC D571',
+      description: t.controlSystems.items[2].description,
       image: cncD371Image,
       link: '/products/d571',
     },
@@ -253,19 +253,11 @@ export function HomePage() {
                 <h2 className="mb-6 text-4xl font-normal leading-10 tracking-[0.37px] text-op-ink transition-colors group-hover:text-op-primary">
                   {t.home.flagshipTitle}
                 </h2>
-                <p className="mb-8 text-lg leading-relaxed text-op-body">
-                  {t.home.flagshipDesc}
-                </p>
-
-                <div className="mb-10 space-y-4">
-                  {t.home.flagshipFeatures.map((f: { title: string; desc: string }) => (
-                    <div key={f.title} className="flex items-start gap-3">
-                      <CheckCircle2 className="mt-0.5 h-6 w-6 flex-shrink-0 text-op-primary" />
-                      <div>
-                        <h3 className="mb-1 text-base font-medium leading-6 tracking-[-0.31px] text-op-ink">{f.title}</h3>
-                        <p className="text-base leading-relaxed text-op-body">{f.desc}</p>
-                      </div>
-                    </div>
+                <div className="mb-8 space-y-4">
+                  {t.home.flagshipParagraphs.map((paragraph: string) => (
+                    <p key={paragraph.slice(0, 48)} className="text-lg leading-relaxed text-op-body">
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
 

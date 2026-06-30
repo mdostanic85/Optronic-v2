@@ -131,7 +131,7 @@ export const supportDetailsEn = {
   componentLists: {
     heading: 'Component Lists for Older Control Systems',
     intro:
-      'For each control system of type series D100 / D300 / E100, OPTRONIC AG offers a components list. The list holds all OPTRONIC parts that are components of the device, together with their order numbers. Components lists for selected OPTRONIC control systems (Components lists for not listed control systems are available on request):',
+      'For each control system of type series D100 / D300 / E100, OPTRONIC AG offers a components list. The list holds all OPTRONIC parts that are components of the device, together with their order numbers. Components lists for not listed control systems are available on request.',
     table: {
       list: 'List',
       controlSystems: 'Control Systems',
@@ -222,7 +222,7 @@ export const supportDetailsEn = {
     ],
   },
   lvObsolete: {
-    coverTitle: 'Support for Light Screens LV100 / LV100D / LV150 / LV150D',
+    coverTitle: 'Light Screens LV100 / LV100D / LV150 / LV150D',
     intro:
       'OPTRONIC AG offers support and repair service for all devices of previous type series. The first light screens were already delivered in the seventies. Replacement parts are still available for this devices. Additionally, with small adaptions, various devices of the actual type series LV...M can be used as replacement for light screens of type series LV...D.',
     imageAltLv100Lvs: 'lv100_lvs',
