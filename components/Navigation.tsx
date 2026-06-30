@@ -32,6 +32,7 @@ export function Navigation() {
     { label: t.nav.products, productDropdown: true },
     { label: t.nav.support, path: '/support', supportDropdown: supportNavItems },
     { path: '/support/downloads', label: t.nav.downloads },
+    { path: '/privacy', label: t.nav.privacy },
     { path: '/contact', label: t.nav.contact },
   ]
 

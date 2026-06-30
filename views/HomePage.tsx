@@ -135,10 +135,6 @@ export function HomePage() {
               <Container className="py-28 md:py-36">
                 <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
                   <div className="text-op-on-dark">
-                    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/70 backdrop-blur-sm">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#DC3545]" />
-                      Swiss Precision Engineering
-                    </div>
                     <h1 className="mb-6 text-[length:var(--op-text-hero)] font-bold leading-[1.08] tracking-tight">
                       {slide.title}
                     </h1>

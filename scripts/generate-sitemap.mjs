@@ -13,6 +13,7 @@ const staticRoutes = [
   '/about',
   '/contact',
   '/privacy',
+  '/privacy-policy',
   '/products',
   '/products/sensors',
   '/products/control-systems',

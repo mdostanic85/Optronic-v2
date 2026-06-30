@@ -410,9 +410,9 @@ export const supportDetailsDe: typeof supportDetailsEn = {
       'Auf dem Typenschild und dem Typenkleber sind die applikationsspezifische Gerätebezeichnung sowie die Geräteseriennummer festgehalten. Die Angaben dienen zur eindeutigen Identifikation des Geräts. OPTRONIC AG führt zu jeder Steuerung ein Journal, das Auskunft gibt über allenfalls aufgetretene Problem und am Gerät vorgenommene Arbeiten.\n\nAuf dem Kontrollschild sind die Artikelnummer des Geräts sowie ein OPTRONIC-interner Prüfcode festgehalten.',
   },
   componentLists: {
-    heading: 'Baugruppenlisten für ältere Steuerungen',
+    heading: 'Baugruppenlisten zu älteren Steuerungen',
     intro:
-      'OPTRONIC AG führt zu jeder Steuerung der Baureihen D100 / D300 / E100 eine Baugruppenliste, in der alle im Gerät eingesetzten OPTRONIC-Baugruppen zusammen mit den Bestellnummern aufgeführt sind. Baugruppenlisten zu ausgewählten OPTRONIC-Steuerungen (Baugruppenlisten zu nicht aufgeführten Steuerungen sind auf Anfrage erhältlich):',
+      'OPTRONIC AG führt zu jeder Steuerung der Baureihen D100 / D300 / E100 eine Baugruppenliste, in der alle im Gerät eingesetzten OPTRONIC-Baugruppen zusammen mit den Bestellnummern aufgeführt sind. Baugruppenlisten zu nicht aufgeführten Steuerungen sind auf Anfrage erhältlich.',
     table: {
       list: 'Liste',
       controlSystems: 'Steuerungen',
@@ -495,7 +495,7 @@ export const supportDetailsDe: typeof supportDetailsEn = {
     ],
   },
   lvObsolete: {
-    coverTitle: 'Support zu Lichtvorhängen LV100 / LV100D / LV150 / LV150D',
+    coverTitle: 'Lichtvorhänge LV100 / LV100D / LV150 / LV150D',
     intro:
       'OPTRONIC AG bietet Support und Reparaturdienst zu allen Geräten aus früheren Baureihen. Die ersten Lichtvorhänge wurden bereits in den 70er Jahren geliefert. Auch zu diesen Geräten sind nach wie vor Ersatzteile lieferbar. Ausserdem eignen sich verschiedene Geräte aus der aktuellen Baureihe LV...M mit geringfügigen Adaptionen als Ersatz für Lichtvorhänge vom Typ LV...D.',
     imageAltLv100Lvs: 'lv100_lvs',

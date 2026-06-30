@@ -42,6 +42,7 @@ export const routes: RouteRecord[] = [
   { path: '/about', element: <LocalePathRedirect /> },
   { path: '/contact', element: <LocalePathRedirect /> },
   { path: '/privacy', element: <LocalePathRedirect /> },
+  { path: '/privacy-policy', element: <LocalePathRedirect /> },
   { path: '/support/*', element: <LocalePathRedirect /> },
   { path: '/services/*', element: <LocalePathRedirect /> },
   {
@@ -54,6 +55,7 @@ export const routes: RouteRecord[] = [
       { path: 'about', element: <AboutPage /> },
       { path: 'contact', element: <ContactPage /> },
       { path: 'privacy', element: <PrivacyPage /> },
+      { path: 'privacy-policy', element: <PrivacyPage /> },
       {
         path: 'products',
         children: [

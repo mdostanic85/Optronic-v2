@@ -654,23 +654,10 @@ export function SupportPage() {
               <strong className="font-semibold text-op-on-dark">{sd.fsu200.coverSubtitle}</strong>
             )
           : undefined;
-    const cncBatteryPdf =
-      activeCategory.id === 'cnc-obsolete' ? cncObsoleteBatteryPdf(locale) : null;
-
     return (
       <div className="bg-op-surface">
         <SEO title={activeCategory.title} description={activeCategory.description || t.support.description} />
         <PageHeader title={pageHeaderTitle} description={pageHeaderDescription}>
-          {cncBatteryPdf && (
-            <a
-              href={cncBatteryPdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-block text-sm text-op-on-dark-muted transition-colors hover:text-op-on-dark"
-            >
-              {sd.cncObsolete.coverDownloadLabel}
-            </a>
-          )}
           <div className="mt-6">
             <Link
               to={lp('/support')}

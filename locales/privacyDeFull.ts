@@ -317,7 +317,6 @@ export const privacyDe: PrivacyBundle = {
             'OPTRONIC AG SWITZERLAND',
             'e-mail: sales@optronic.ch',
             'Phone: +41 (0)71 8440200',
-            'Fax: +41 (0)71 8440210',
           ],
         },
       ],

@@ -13,7 +13,7 @@ export function PrivacyPage() {
 
   return (
     <div>
-      <SEO title="Privacy Policy" description="OPTRONIC AG privacy policy and data protection information." />
+      <SEO title={title} description={description} />
       <PageHeader title={title} />
 
       <Section variant="surface" spacing="default">
@@ -27,10 +27,10 @@ export function PrivacyPage() {
               ))}
             </div>
 
-            <div className="mt-8 space-y-8">
+            <div className="mt-8 space-y-10">
               {content.sections.map((section) => (
                 <section key={section.heading}>
-                  <h2 className="mb-4 text-xl font-medium text-op-ink">{section.heading}</h2>
+                  <h2 className="mb-4 text-2xl font-semibold text-op-ink">{section.heading}</h2>
                   <div className="space-y-6">
                     {section.blocks.map((block, bi) => (
                       <div key={`${section.heading}-${bi}`}>

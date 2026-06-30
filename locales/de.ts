@@ -11,12 +11,13 @@ const de = {
     support: 'Support',
     contact: 'Kontakt',
     downloads: 'Downloads',
+    privacy: 'Datenschutzerklärung',
   },
 
   // ── Home page ──
   home: {
     heroSlides: [
-      { title: 'Digitale Lichtvorhänge / Lichtgitter LVMC', description: 'Das überlegene Sensor zum Erfassen, Zähen, Messen und Klassifizieren von Objekten' },
+      { title: 'Digitale Lichtvorhänge / Lichtgitter LVMC', description: 'Das überlegene Sensor zum Erfassen, Zählen, Messen und Klassifizieren von Objekten' },
       { title: 'CNC D500 / Bedienstation E3000', description: 'Für den jahrelangen fehlerfreien Einsatz unter harten industriellen Bedingungen' },
       { title: 'Lichtvorhänge / Lichtgitter LV..M', description: 'Zum Erfassen und Zählen von Kleinteilen jeglicher Art' },
       { title: 'Inkrementalgeber OG23D / OG28D', description: 'Robuste fotoelektrische Inkrementalgeber für den Einsatz unter erschwerten Bedingungen' },
@@ -223,10 +224,10 @@ const de = {
   // ── About page ──
   about: {
     title: 'Ihre Zufriedenheit ist unser primäres Ziel',
-    description: 'Seit über 60 Jahren führend in optischen und elektronischen Lösungen.',
+    description: 'Seit 1961 führend in optischen und elektronischen Lösungen.',
     ourStory: 'Unsere Geschichte',
     storyParagraphs: [
-      '<strong>OPTRONIC AG</strong> wurde 1961 als Unternehmen für Entwicklung und Herstellung sowie Vertrieb von opto-elektronischen Geräten gegründet.',
+      'OPTRONIC AG wurde 1961 als Unternehmen für Entwicklung und Herstellung sowie Vertrieb von opto-elektronischen Geräten gegründet.',
       'Heute umfasst das Leistungsangebot von OPTRONIC AG Lösungen für besondere Anforderungen in den Bereichen industrielle Steuerungstechnik und Sensorik sowie kundenspezifische Hardware- und Software-Entwicklung.',
       '',
     ],
@@ -523,8 +524,8 @@ const de = {
       lvmc_cmt_a2_2201: 'LVMC CMT A2 V2.201 (Schnittstelle A2)',
       lvmc_rc_v13: 'LVMC RC V1.3 (passend zu Firmware V1.x)',
       lvmc_rc_v21: 'LVMC RC V2.1 (passend zu Firmware V2.x)',
-      lvm_flyer: 'Prospekt zum Lichtvorhang LV...M',
-      lvm_datasheet: 'Datenblatt zum Lichtvorhang LV...M',
+      lvm_flyer: 'Prospekt zum Lichtvorhang LV..M',
+      lvm_datasheet: 'Datenblatt zum Lichtvorhang LV..M',
       lv100d_ds: 'Datenblatt zum Lichtvorhang LV100D und LV150D',
       lv100d_emitter: 'Lichtvorhang LV100D: Auswechseln des Sender- / Empfängerblocks 327.203.01',
       lv_mirrors: 'Lichtvorhang LV100D, LV150D, LV100, LV150: Ersetzen der Spiegel',

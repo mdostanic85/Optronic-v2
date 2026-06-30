@@ -36,7 +36,6 @@ export function ContactPage() {
     { icon: Phone, title: t.contact.callUs, content: (
       <div className="space-y-1">
         <p className="text-sm"><a href="tel:+41718440200" className="text-op-body hover:text-op-primary transition-colors">+41 (0)71 844 02 00</a></p>
-        <p className="text-sm text-op-body">Fax: +41 (0)71 844 02 10</p>
         <p className="text-sm text-op-body">Mon-Fri: 8:00 - 17:00 CET</p>
       </div>
     )},
