@@ -24,18 +24,18 @@ const de = {
     ],
     viewProduct: 'Produkt ansehen',
     contactUs: 'Kontaktieren Sie uns',
-    ourSolutions: 'Unsere Lösungen',
-    ourSolutionsDesc: 'Kernproduktkategorien für Präzision, Zuverlässigkeit und Leistung',
+    ourSolutions: '',
+    ourSolutionsDesc: '',
     solutionSensors: 'Sensorik',
-    solutionSensorsDesc: 'Lichtvorhänge, Lichtschranken, Inkrementalgeber und induktive Ringtaster für präzise Messung und Erkennung.',
+    solutionSensorsDesc: 'Lichtvorhänge, Lichtschranken, Inkrementalgeber und induktive Ringtaster.',
     solutionSensorsProducts: '6 Produktlinien',
     solutionControl: 'Steuerungstechnik',
-    solutionControlDesc: 'CNC-Steuerungen und Linux-basierte industrielle Echtzeit-Betriebssysteme für die Fertigung.',
+    solutionControlDesc: 'CNC-Steuerungen und Linux-basierte industrielle Echtzeit-Betriebssysteme.',
     solutionControlProducts: '3 Produktlinien',
     solutionSupport: 'Support & Service',
     solutionSupportDesc: 'Umfassender Support für ältere Systeme, Ersatzteile, Reparaturen und Retrofits.',
     solutionSupportMeta: 'Langzeit-Support',
-    flagshipProduct: 'Flaggschiff-Produkt',
+    flagshipProduct: 'Highlight',
     flagshipTitle: 'LVMC – Digitaler High-End Lichtvorhang',
     flagshipParagraphs: [
       'Der selbstlernende digitale Lichtvorhang LVMC kommt hauptsächlich für die präzise Erkennung, Zählung, Messung und Klassifizierung von Objekten zum Einsatz. Der Sensor kann daneben auch zur Qualitätskontrolle in Bereichen eingesetzt werden, die bis anhin Kamerasystemen vorbehalten waren. Beispielsweise zur Beantwortung der Frage, ob in einer Befüllungsanlage alle Deckel auf die Flaschen korrekt aufgesetzt sind, welche in Bruchteilen einer Sekunde das Tastfeld des Sensors passieren.',
@@ -45,7 +45,7 @@ const de = {
     viewTechnicalDetails: 'Technische Details ansehen',
     sensorProducts: 'Sensorik-Produkte',
     sensorProductsDesc: 'Unser umfassendes Sortiment an optischen und elektronischen Sensoren vereint Schweizer Präzisionstechnik mit fortschrittlicher Technologie, um zuverlässige Mess-, Erkennungs- und Steuerungslösungen für anspruchsvolle industrielle Anwendungen zu liefern.',
-    sensorProductsDesc2: 'Von digitalen Lichtvorhängen und Lichtschranken über optische Drehgeber bis hin zu Induktiven Ringtastern – jedes Produkt ist auf maximale Genauigkeit, Langlebigkeit und nahtlose Integration in automatisierte Produktionsumgebungen ausgelegt. Alle Sensoren verfügen über robuste Industriequalität, Standard-Kommunikationsschnittstellen und umfassende Diagnosefunktionen.',
+    sensorProductsDesc2: 'Von digitalen Lichtvorhängen und Lichtschranken über optische Drehgeber bis hin zu Induktiven Ringtastern – jedes Produkt ist auf maximale Genauigkeit, Langlebigkeit und nahtlose Integration in automatisierte Produktionsumgebungen ausgelegt.',
     viewAllSensors: 'Alle Sensoren ansehen',
     controlSystemsTitle: 'Steuerungstechnik',
     controlSystemsDesc: 'Unser Sortiment an Steuerungssystemen vereint Präzisionstechnik mit fortschrittlicher Technologie, um zuverlässige und effiziente Lösungen für industrielle Automatisierung und Fertigung zu liefern.',
@@ -196,6 +196,9 @@ const de = {
     sendButton: 'Nachricht senden',
     ourLocation: 'Unser Standort',
     salesPartners: 'Vertriebspartner',
+    partnerCountryGermany: 'Deutschland',
+    partnerCountryFrance: 'Frankreich',
+    partnerCountryDenmark: 'Dänemark',
     whyContact: 'Warum uns kontaktieren?',
     whyContactItems: [
       'Schnelle Antwortzeit — in der Regel innerhalb von 24 Stunden',
@@ -341,8 +344,17 @@ const de = {
       overviewDescription:
         'Die Messlichtschranken G15 und G35 sind Spezial-Lichtschranken für Längenmess-Systeme oder als Lichtvorhänge zur Objekterkennung. Mit Ansprechzeiten von 100µs und Genauigkeiten bis ±0,5 mm liefern sie zuverlässige Resultate auch unter erschwerten Bedingungen.',
       downloadsHeading: 'Technische Dokumentation',
-      ctaTitle: 'Fragen zu G15 / G35?',
+      ctaTitle: 'Fragen zu den Lichtschranken G15 und G35?',
       ctaDesc: 'Kontaktieren Sie unser technisches Team für Beratung und Konfiguration.',
+    },
+
+    irvirt: {
+      ctaTitle: 'Hilfe bei der Wahl der geeigneten IRV / IRT?',
+      ctaDescription: 'Kontaktieren Sie unser technisches Team, um Ihre spezifischen Anforderungen zu besprechen.',
+    },
+
+    og: {
+      ctaTitle: 'Benötigen Sie Hilfe bei der Auswahl des passenden Gebers?',
     },
 
     lvm: {
@@ -354,7 +366,7 @@ const de = {
       featuresDesc: 'Entwickelt für zuverlässige Kleinteilerkennung in anspruchsvollen Umgebungen',
       modelsTitle: 'Standard-Lichtleisten-Konfigurationen',
       modelsDesc: 'Vorkonfigurierte Modelle für gängige Anwendungen. Individuelle Konfigurationen auf Anfrage.',
-      ctaTitle: 'Hilfe bei der Wahl der richtigen LV..M Konfiguration?',
+      ctaTitle: 'Benötigen Sie Hilfe bei der Wahl der richtigen LV..M Konfiguration?',
       ctaDesc: 'Kontaktieren Sie unser technisches Team, um Ihre spezifischen Anforderungen zu besprechen.',
       downloadsTitle: 'Technische Dokumentation',
       downloadsDesc: 'Zugang zu Produktdatenblättern und Dokumentation',
@@ -370,7 +382,7 @@ const de = {
       industrialSensorBadge: 'Industriesensor',
       productOverview: 'Produktübersicht',
       overviewBody:
-        'Die IGV-Inkrementalgeber-Verzweigungen ermöglichen den potentialfreien Anschluss eines Gebers an bis zu drei Ziele wie CNC-Steuerungen, SPS oder Messgeräte. Verfügbar in verschiedenen Varianten für unterschiedliche Ziel-Signalpegel.',
+        'Die Mehrfach-Inkrementalgeberverzweigungen IGV ermöglichen den potentialfreien Anschluss eines Gebers an bis zu drei Zielbaugruppen wie CNC-Steuerungen, SPSen oder Messgeräte.',
       imageAlt: 'Inkrementalgeber-Verzweigungen IGV',
       keyFeatures: 'Hauptmerkmale',
       modelsSpecsBadge: 'Modelle & Spezifikationen',
@@ -383,7 +395,7 @@ const de = {
       tableOutput3: 'Ausgang 3 (X5)',
       downloadsHeading: 'Technische Dokumentation',
       diagramAlt: 'IGV Signaldiagramm',
-      ctaTitle: 'Hilfe bei der Gebersignal-Verteilung?',
+      ctaTitle: 'Hilfe bei der Auswahl der geeigneten IGV-Variante?',
       ctaDesc: 'Kontaktieren Sie unser Team für Integrationsunterstützung.',
     },
 

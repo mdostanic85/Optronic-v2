@@ -151,7 +151,7 @@ export function ContactPage() {
             <h3 className="mb-5 text-xl font-medium text-op-ink">{t.contact.salesPartners}</h3>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <div className="rounded-xl border border-op-border bg-op-surface p-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-op-body mb-2">Germany</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-op-body mb-2">{t.contact.partnerCountryGermany}</p>
                 <p className="text-sm font-medium text-op-ink">ISIS IC GmbH</p>
                 <p className="text-sm text-op-body">Handelsweg 1</p>
                 <p className="text-sm text-op-body">DE-46485 Wesel</p>
@@ -161,7 +161,7 @@ export function ContactPage() {
                 <a href="mailto:vertrieb@isis-ic.com" className="block text-sm text-op-primary hover:underline">vertrieb@isis-ic.com</a>
               </div>
               <div className="rounded-xl border border-op-border bg-op-surface p-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-op-body mb-2">France</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-op-body mb-2">{t.contact.partnerCountryFrance}</p>
                 <p className="text-sm font-medium text-op-ink">TECNIPACK SERVICES</p>
                 <p className="text-sm text-op-body">10 rue charles tellier</p>
                 <p className="text-sm text-op-body">FR-77100 MEAUX</p>
@@ -170,7 +170,7 @@ export function ContactPage() {
                 <a href="mailto:administratif@tecnipack-services.fr" className="block text-sm text-op-primary hover:underline">administratif@tecnipack-services.fr</a>
               </div>
               <div className="rounded-xl border border-op-border bg-op-surface p-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-op-body mb-2">Denmark</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-op-body mb-2">{t.contact.partnerCountryDenmark}</p>
                 <p className="text-sm font-medium text-op-ink">SEVAL A/S</p>
                 <p className="text-sm text-op-body">Kærbøllingvej 106</p>
                 <p className="text-sm text-op-body">DK-7182 Bredsten</p>

@@ -194,7 +194,11 @@ export function OGPage() {
         </Section>
       ) : null}
 
-      <PageCTA title={og?.ctaTitle || t.productPages.lvm.ctaTitle} description={og?.ctaDescription || t.productPages.lvm.ctaDesc}>
+      <PageCTA
+        title={og?.ctaTitle || t.productPages.lvm.ctaTitle}
+        description={og?.ctaDescription || t.productPages.lvm.ctaDesc}
+        titleClassName="whitespace-nowrap"
+      >
         <ButtonLink to={lp('/contact')} variant="primary" iconRight={<ArrowRight className="h-5 w-5" />}>
           {og?.requestConsultation || t.productPages.requestConsultation}
         </ButtonLink>

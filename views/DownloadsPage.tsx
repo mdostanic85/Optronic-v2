@@ -342,7 +342,7 @@ export function DownloadsPage() {
       </Section>
 
       <Section variant="surface" spacing="default">
-        <Container narrow className="text-center">
+        <Container className="text-center">
           <h2 className="mb-4 text-3xl font-normal text-op-ink">{d.ctaTitle}</h2>
           <p className="mb-8 text-xl text-op-body">{d.ctaDesc}</p>
           <ButtonLink to="/contact" variant="primary">{d.ctaButton}</ButtonLink>
