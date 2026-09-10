@@ -30,10 +30,7 @@ export function ProductsPage() {
   return (
     <div>
       <SEO title="Products" description="Explore OPTRONIC industrial sensors and CNC control systems. Digital light screens, light curtains, encoders, multi-axis CNC controllers, and real-time operating systems." />
-      <PageHeader
-        title={t.footer.products}
-        description={t.home.ourSolutionsDesc}
-      />
+      <PageHeader title={t.footer.products} />
 
       <Section variant="surface" spacing="default">
         <Container>

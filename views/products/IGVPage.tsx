@@ -65,7 +65,6 @@ export function IGVPage() {
           <ProductSectionHeader
             badge={t.productPages.featuresCapabilities}
             title={page.sections?.[0]?.heading ?? t.productPages.igv?.keyFeatures}
-            description={t.productPages.lvm.featuresDesc}
           />
           <ProductBulletList items={features} />
         </Container>

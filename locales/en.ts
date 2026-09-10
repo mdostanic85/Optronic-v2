@@ -24,13 +24,13 @@ const en = {
     ],
     viewProduct: 'View Product',
     contactUs: 'Contact Us',
-    ourSolutions: 'Our Solutions',
-    ourSolutionsDesc: 'Core product categories designed for precision, reliability, and performance',
+    ourSolutions: '',
+    ourSolutionsDesc: '',
     solutionSensors: 'Sensors',
-    solutionSensorsDesc: 'Light screens, barriers, encoders, and inductive loop sensors for precise measurement and detection.',
+    solutionSensorsDesc: 'Light screens, barriers, encoders, and inductive loop sensors.',
     solutionSensorsProducts: '6 Product Lines',
     solutionControl: 'Control Systems',
-    solutionControlDesc: 'CNC controllers and Linux-based industrial real-time operating systems for manufacturing.',
+    solutionControlDesc: 'CNC controllers and Linux-based industrial real-time operating systems.',
     solutionControlProducts: '3 Product Lines',
     solutionSupport: 'Support & Service',
     solutionSupportDesc: 'Comprehensive support for legacy systems, spare parts, repairs, and retrofits.',
@@ -45,7 +45,7 @@ const en = {
     viewTechnicalDetails: 'View Technical Details',
     sensorProducts: 'Sensor Products',
     sensorProductsDesc: 'Our comprehensive range of optical and electronic sensors combines Swiss precision engineering with advanced technology to deliver reliable measurement, detection, and control solutions for demanding industrial applications.',
-    sensorProductsDesc2: 'From digital light screens and light barriers to optical encoders and inductive loop sensors, each product is designed for maximum accuracy, durability, and seamless integration into automated production environments. All sensors feature robust industrial-grade construction, standard communication interfaces, and comprehensive diagnostic capabilities.',
+    sensorProductsDesc2: 'From digital light screens and light barriers to optical encoders and inductive loop sensors, each product is designed for maximum accuracy, durability, and seamless integration into automated production environments.',
     viewAllSensors: 'View All Sensors',
     controlSystemsTitle: 'Control Systems',
     controlSystemsDesc: 'Our range of control systems combines precision engineering with advanced technology to deliver reliable and efficient solutions for industrial automation and manufacturing.',
@@ -196,6 +196,9 @@ const en = {
     sendButton: 'Send Message',
     ourLocation: 'Our Location',
     salesPartners: 'Sales Partners',
+    partnerCountryGermany: 'Germany',
+    partnerCountryFrance: 'France',
+    partnerCountryDenmark: 'Denmark',
     whyContact: 'Why Contact Us?',
     whyContactItems: [
       'Fast response time — typically within 24 hours',
@@ -342,8 +345,17 @@ const en = {
       overviewDescription:
         'The G15 and G35 measuring light barriers are special-purpose sensors for length measuring systems or as light curtains for object detection. With 100µs response time and accuracy down to ±0.5 mm, they deliver reliable results even under difficult conditions.',
       downloadsHeading: 'Technical Documentation',
-      ctaTitle: 'Questions about G15 / G35?',
+      ctaTitle: 'Questions about the light barriers G15 and G35?',
       ctaDesc: 'Contact our technical team for consultation and configuration.',
+    },
+
+    irvirt: {
+      ctaTitle: 'Need help choosing the right IRV / IRT?',
+      ctaDescription: 'Contact our technical team to discuss your specific requirements.',
+    },
+
+    og: {
+      ctaTitle: 'Need help choosing the right encoder?',
     },
 
     lvm: {
@@ -371,7 +383,7 @@ const en = {
       industrialSensorBadge: 'Industrial Sensor',
       productOverview: 'Product Overview',
       overviewBody:
-        'The IGV incremental encoder expanders allow connecting one encoder electrically isolated to up to three targets such as CNC controllers, PLCs, or measurement equipment. Available in different variants for different target signal levels.',
+        'The multiple incremental encoder expanders IGV allow connecting one encoder electrically isolated to up to three target assemblies such as CNC controllers, PLCs, or measurement equipment.',
       imageAlt: 'Incremental Encoder Expanders IGV',
       keyFeatures: 'Key Features',
       modelsSpecsBadge: 'Models & Specifications',
@@ -384,7 +396,7 @@ const en = {
       tableOutput3: 'Output 3 (X5)',
       downloadsHeading: 'Technical Documentation',
       diagramAlt: 'IGV signal distribution diagram',
-      ctaTitle: 'Need Help with Encoder Signal Distribution?',
+      ctaTitle: 'Need help with selecting the right IGV type?',
       ctaDesc: 'Contact our team for integration support.',
     },
 

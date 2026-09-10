@@ -205,11 +205,6 @@ export function HomePage() {
 
       <Section variant="surface" spacing="default">
         <Container>
-          <SectionHeader
-            title={t.home.ourSolutions}
-            description={t.home.ourSolutionsDesc}
-            className="mb-16"
-          />
           <RevealStagger variant="fade-up" stagger={0.12} className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               <FeatureCard
@@ -408,7 +403,7 @@ export function HomePage() {
       <section className="relative overflow-hidden bg-op-gradient-hero py-op-section-lg text-op-on-dark">
         <div className="absolute inset-0 bg-grid-pattern" />
         <div className="absolute -top-1/3 right-0 h-[500px] w-[500px] rounded-full bg-[#DC3545]/[0.06] blur-[100px]" />
-        <Container narrow className="relative text-center">
+        <Container className="relative text-center">
           <Reveal variant="fade-up" duration={0.7}>
             <h2 className="mb-5 text-3xl font-bold leading-tight tracking-tight md:text-4xl">
               {t.home.swissExcellenceTitle}
@@ -442,7 +437,7 @@ export function HomePage() {
 
       <section className="relative overflow-hidden bg-op-gradient-cta py-op-section-lg text-op-on-dark">
         <div className="absolute inset-0 bg-grid-pattern" />
-        <Container narrow className="relative text-center">
+        <Container className="relative text-center">
           <Reveal variant="fade-up" duration={0.6}>
             <h2 className="mb-5 text-3xl font-bold leading-tight tracking-tight md:text-4xl">{t.home.ctaTitle}</h2>
           </Reveal>
