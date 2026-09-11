@@ -1,34 +1,4 @@
-# CRRT open feedback — text changes (`feedback`)
-
-Source: `GET https://crrt.ai/api/v1/public/comments?projectKey=optronic` (Stephan, 2026-09-11). Earlier 2026-07-17 / 2026-09-10 batch is already merged — not redone.
-
-## Done (2026-09-11)
-
-| # | Page | Key / location | Previous | Current |
-|---|------|----------------|----------|---------|
-| 1 | Home EN+DE | `home.supportLegacyTitle` | EN: `Support & Legacy CNC Systems` / DE: `Support & Legacy-CNC-Systeme` | `Support` (both) |
-| 2 | Home EN+DE | `home.supportLegacyDesc` | EN: `…legacy CNC control systems` / `support for systems that…` / DE: `eingestellte und ältere CNC-Steuerungssysteme` / `für Systeme, die…` | EN: `…legacy OPTRONIC products` / `support for devices that…` / DE: `abgekündigte und ältere OPTRONIC-Produkte` / `für Geräte, die…` |
-| 3 | Home EN+DE | `home.supportLegacyItems[0].title` | EN: `Support for legacy and discontinued control systems` / DE: `Support für ältere und eingestellte Steuerungssysteme` | EN: `Technical assistance` / DE: `Support für ältere und abgekündigte Geräte und Komponenten` |
-| 4 | Home EN+DE | Spare-parts + assistance card | EN item: `legacy CNC systems` / card: `legacy systems` / DE item: `CNC-Systeme` / card: `ältere Systeme` | EN: `legacy CNC devices` / `legacy devices` / DE: `CNC-Geräte` / `ältere Geräte` |
-| 5 | Home EN+DE | `home.supportLegacyItems[2]` | Titles: `Repair, service, and retrofit solutions` / `Reparatur, Service und Retrofit-Lösungen`; body: `system upgrades` / `Systemupgrades` | Titles: `Repair & retrofit` / `Reparatur & Retrofit`; body: `retrofits` / `Retrofits` |
-| 6 | Home DE+EN | `home.sensorProductsDesc` | DE: `…fortschrittlicher Technologie, um … zu liefern.` / EN: `…advanced technology to deliver…` | DE: exact Stephan replacement (`modernster Technologie` / `und bietet`). EN: `combines Swiss precision engineering with cutting-edge technology and provides…` |
-| 7 | Home DE+EN | `home.controlSystemsDesc` | DE: `vereint Präzisionstechnik mit…` / EN: `combines precision engineering with…` | DE: exact Stephan replacement (`Schweizer Präzisionstechnik fortschrittlicher Technologie`). EN: `combines Swiss precision engineering… and thus provides…` |
-| 8 | Home EN+DE | `home.sensorProductsDesc2` + `home.controlSystemsDesc2` | Second paragraphs rendered via `SectionHeader` `descriptionSecondary` | Keys removed; HomePage no longer passes `descriptionSecondary` |
-| 9 | Home + LVMC EN+DE | `home.flagshipParagraphs[2]` + `productPages.lvmc.overviewP3` | Resolution 50μm–1mm / Linux computer paragraph | Removed from locales; LVMC overview no longer renders P3 |
-| 10 | LVMC EN+DE | `productPages.lvmc.customConfigDesc` (LVMC-only; shared `customConfigDesc` unchanged) | Shared: `Need a custom configuration? Contact our engineering team for tailored solutions.` / `Benötigen Sie eine individuelle Konfiguration? Kontaktieren Sie unser Ingenieurteam für maßgeschneiderte Lösungen.` | EN: `Contact our engineering team.` / DE: `Kontaktieren Sie unser Ingenieurteam.` |
-| 11 | LVMC EN+DE | `productPages.lvmc.ctaDesc` | EN: `Contact our technical team to discuss your specific requirements and get a customized solution.` / DE: `Kontaktieren Sie unser technisches Team, um Ihre spezifischen Anforderungen zu besprechen.` | EN: `Contact our team to discuss...` / DE: `Kontaktiere Sie uns, um...` (Stephan’s informal DE kept) |
-
-## Files touched
-
-- `locales/en.ts`
-- `locales/de.ts`
-- `views/HomePage.tsx` (stop rendering desc2 paragraphs)
-- `views/products/LVMCPage.tsx` (drop overview P3; LVMC custom-config string)
-- `CRRT-FEEDBACK-CHANGES.md` (this file)
-
----
-
-# Previous batch — `feedback-update` (merged)
+# CRRT open feedback — text changes (feedback-update)
 
 Source: `GET https://crrt.ai/api/v1/public/comments?projectKey=optronic` (reviewStatus=open).
 

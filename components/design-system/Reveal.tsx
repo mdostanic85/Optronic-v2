@@ -28,9 +28,7 @@ const hiddenStyles: Record<RevealVariant, CSSProperties> = {
 
 const visibleStyles: CSSProperties = {
   opacity: 1,
-  // Avoid leaving a transform on visible nodes — transforms create containing
-  // blocks and make CRRT/fixed overlays drift while scrolling.
-  transform: 'none',
+  transform: 'translate(0) scale(1)',
 };
 
 export function Reveal({

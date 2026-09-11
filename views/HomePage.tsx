@@ -283,6 +283,7 @@ export function HomePage() {
           <SectionHeader
             title={t.home.sensorProducts}
             description={t.home.sensorProductsDesc}
+            descriptionSecondary={t.home.sensorProductsDesc2}
           />
 
           <RevealStagger variant="fade-up" stagger={0.12} className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -313,6 +314,7 @@ export function HomePage() {
           <SectionHeader
             title={t.home.controlSystemsTitle}
             description={t.home.controlSystemsDesc}
+            descriptionSecondary={t.home.controlSystemsDesc2}
           />
 
           <RevealStagger variant="fade-up" stagger={0.12} className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
