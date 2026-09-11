@@ -1,6 +1,5 @@
 import { Outlet, useParams, Navigate } from 'react-router-dom'
 import { LanguageProvider } from '@/contexts/LanguageContext'
-import { WireframeProvider } from '@/contexts/WireframeContext'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { ScrollToTop } from '@/components/ScrollToTop'
@@ -17,17 +16,15 @@ export function LocaleLayout() {
 
   return (
     <LanguageProvider>
-      <WireframeProvider>
-        <ScrollToTop />
-        <div className="flex min-h-full flex-col">
-          <Navigation />
-          <main className="flex-1">
-            <Outlet />
-          </main>
-          <Footer />
-        </div>
-        <ClientFeedbackWidget />
-      </WireframeProvider>
+      <ScrollToTop />
+      <div className="flex min-h-full flex-col">
+        <Navigation />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+      <ClientFeedbackWidget />
     </LanguageProvider>
   )
 }

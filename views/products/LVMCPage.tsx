@@ -83,9 +83,6 @@ export function LVMCPage() {
               <h2 className="mb-6 text-3xl text-op-ink md:text-4xl">{t.productPages.lvmc.overviewTitle}</h2>
               <p className="mb-6 text-lg leading-relaxed text-op-body">{t.productPages.lvmc.overviewP1}</p>
               <p className="text-lg leading-relaxed text-op-body">{t.productPages.lvmc.overviewP2}</p>
-              {t.productPages.lvmc.overviewP3 ? (
-                <p className="mt-6 text-lg leading-relaxed text-op-body">{t.productPages.lvmc.overviewP3}</p>
-              ) : null}
             </div>
             <div>
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border-4 border-gray-100 bg-white">
@@ -224,7 +221,7 @@ export function LVMCPage() {
               </table>
             </div>
             <div className="mt-10 rounded-xl bg-op-surface-muted p-8 text-center">
-              <p className="mb-4 text-lg text-op-body">{t.productPages.customConfigDesc}</p>
+              <p className="mb-4 text-lg text-op-body">{t.productPages.lvmc.customConfigDesc}</p>
               <Button size="lg" asChild>
                 <Link to={lp('/contact')}>{t.productPages.requestCustomConfig}</Link>
               </Button>
