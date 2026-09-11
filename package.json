@@ -7,7 +7,8 @@
     "dev": "vite-react-ssg dev",
     "build": "vite-react-ssg build && node scripts/generate-sitemap.mjs && node scripts/generate-robots.mjs",
     "preview": "vite preview",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@fancyapps/ui": "^6.1.13",
@@ -66,6 +67,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^6.0.2",
+    "patch-package": "^8.0.1",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.0",
     "vite": "^8.0.13",
