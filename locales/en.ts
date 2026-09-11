@@ -51,7 +51,7 @@ const en = {
     supportLegacyTitle: 'Support',
     supportLegacyDesc: 'OPTRONIC provides support for discontinued and legacy OPTRONIC products. We supply spare parts and technical support for devices that are no longer serviced by original manufacturers, ensuring continued operation of your production equipment.',
     supportLegacyItems: [
-      { title: 'Technical assistance', desc: 'Technical expertise and service for older CNC systems and control units' },
+      { title: 'Technical assistance', desc: 'Technical expertise and service for older devices and components' },
       { title: 'Spare parts supply', desc: 'Replacement components and parts for legacy CNC devices and control hardware' },
       { title: 'Repair & retrofit', desc: 'Professional repair services and retrofits to extend equipment lifetime' },
     ],
